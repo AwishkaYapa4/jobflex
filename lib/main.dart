@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/profile/user_pro.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -11,11 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       home: HomePage(),
-    routes: {
-        '/userProfile': (context) => const UserPro(),
-      },
+      routes: {'/userProfile': (context) => const UserPro()},
     );
   }
 }
@@ -43,7 +40,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       title: const Text(
-        'Your Job Needs',
+        'Jobak hoyamu',
         style: TextStyle(
           color: navyBlue,
           fontSize: 24,
@@ -88,7 +85,7 @@ class HomePage extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
       ),
-      child: const Text('Super market', style: TextStyle(fontSize: 16)),
+      child: const Text('see more', style: TextStyle(fontSize: 16)),
     );
   }
 
