@@ -46,7 +46,7 @@ class SignUpPage extends StatelessWidget {
               children: [
                 SizedBox(height: 40),
                 Text(
-                  'Let\'s get started',
+                  'Let\'s get started for',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                 ),
               ],
