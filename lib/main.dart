@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/footer_pages/more.dart';
 import 'package:jobflex/startpages/loging.dart';
 import 'package:jobflex/widget/constants.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LogingScreen(), // Set your login screen as the home page
+      home: More(), // Set your login screen as the home page
     );
   }
 }
