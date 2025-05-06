@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/profile/user_pro.dart';
 import 'package:jobflex/footer_pages/more.dart';
 import 'package:jobflex/startpages/loging.dart';
-import 'package:jobflex/widget/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: More(), // Set your login screen as the home page
-    );
+      home: const UserPro(), // Added const for consistency
+      routes: {
+        '/userProfile': (context) => const UserPro(),
+        '/more': (context) => const More(), // Example route
+        '/login': (context) => const LogingScreen(),
+      }, // Properly closed the routes map
+    ); // Properly closed the MaterialApp widget
   }
 }

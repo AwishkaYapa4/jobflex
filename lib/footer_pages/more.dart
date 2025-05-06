@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:jobflex/models/setting.dart';
-import 'package:jobflex/widget/constants.dart';
-import 'package:jobflex/widget/setting_tile.dart';
 
+import 'package:flutter/material.dart';
+import 'package:jobflex/models/setting.dart'; 
+import 'package:jobflex/widget/constants.dart'; 
+import 'package:jobflex/widget/setting_tile.dart'; 
 class More extends StatelessWidget {
   const More({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class More extends StatelessWidget {
                 alignment: Alignment.center,
                 child: const Text(
                   "More",
-                  style: TextStyle(fontSize: 20, color: JPrimaryColor),
+                  style: TextStyle(fontSize: 20, color: Color(0xFF233A66)),
                 ),
               ),
               const SizedBox(height: 20),
@@ -47,7 +47,7 @@ class More extends StatelessWidget {
                     // Handle sign out logic here
                   },
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: JPrimaryColor,
+                    foregroundColor: Color(0xFF233A66),
                   ),
                   child: const Text("Sign Out"),
                 ),
@@ -78,11 +78,11 @@ class AvatarCard extends StatelessWidget {
           children: [
             const Text(
               "R.S Rusiru",
-              style: TextStyle(fontSize: 25, color: JPrimaryColor),
+              style: TextStyle(fontSize: 25, color: Color(0xFF233A66)),
             ),
             const Text(
               'Your profile',
-              style: TextStyle(fontSize: 12, color: JPrimaryColor),
+              style: TextStyle(fontSize: 12, color:Color(0xFF233A66)),
             ),
           ],
         ),
