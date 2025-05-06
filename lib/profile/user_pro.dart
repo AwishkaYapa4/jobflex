@@ -23,6 +23,14 @@ class UserPro extends StatelessWidget {
         ],
       ),
       body: SafeArea(
+         child: Container(
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(40),
+        bottomRight: Radius.circular(40),
+      ),
+    ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
           child: Column(
@@ -76,13 +84,13 @@ class UserPro extends StatelessWidget {
 
               // Address
               Text('Adress', style: TextStyle(color: Colors.grey)),
-              Text('*****************************', style: TextStyle(fontSize: 16)),
+              Text('colombo,colombo', style: TextStyle(fontSize: 16)),
 
               SizedBox(height: 20),
 
               // Phone number
               Text('Phone number', style: TextStyle(color: Colors.grey)),
-              Text('**********', style: TextStyle(fontSize: 16)),
+              Text('077123456', style: TextStyle(fontSize: 16)),
 
               SizedBox(height: 30),
 
@@ -97,6 +105,7 @@ class UserPro extends StatelessWidget {
               ),
             ],
           ),
+        ),
         ),
       ),
     );
