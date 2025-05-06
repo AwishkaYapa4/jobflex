@@ -1,15 +1,28 @@
-
 import 'package:flutter/material.dart';
-import 'package:jobflex/models/setting.dart'; 
-import 'package:jobflex/widget/constants.dart'; 
-import 'package:jobflex/widget/setting_tile.dart'; 
+import 'package:jobflex/models/setting.dart';
+import 'package:jobflex/widget/constants.dart';
+import 'package:jobflex/widget/setting_tile.dart';
+
 class More extends StatelessWidget {
   const More({super.key});
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Color(0xFF233A66)),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: const Text(
+          "More",
+          style: TextStyle(fontSize: 20, color: Color(0xFF233A66)),
+        ),
+        centerTitle: true,
+      ),
+
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(30),
@@ -17,15 +30,6 @@ class More extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const SizedBox(height: 10),
-              Align(
-                alignment: Alignment.center,
-                child: const Text(
-                  "More",
-                  style: TextStyle(fontSize: 20, color: Color(0xFF233A66)),
-                ),
-              ),
-              const SizedBox(height: 20),
               const AvatarCard(),
               const SizedBox(height: 20),
               Column(
@@ -82,7 +86,7 @@ class AvatarCard extends StatelessWidget {
             ),
             const Text(
               'Your profile',
-              style: TextStyle(fontSize: 12, color:Color(0xFF233A66)),
+              style: TextStyle(fontSize: 12, color: Color(0xFF233A66)),
             ),
           ],
         ),

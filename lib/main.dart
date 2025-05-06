@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const UserPro(), // Added const for consistency
+      home: const More(),
       routes: {
         '/userProfile': (context) => const UserPro(),
         '/more': (context) => const More(), // Example route
         '/login': (context) => const LogingScreen(),
-      }, // Properly closed the routes map
-    ); // Properly closed the MaterialApp widget
+      },
+    );
   }
 }
