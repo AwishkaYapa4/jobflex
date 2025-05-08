@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:jobflex/models/setting.dart';
 import 'package:jobflex/widget/constants.dart';
 
 class SettingPage extends StatefulWidget {
@@ -37,10 +38,37 @@ class _SettingPageState extends State<SettingPage> {
               color: JPrimaryLightColor,
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
             ),
+            child: Column(
+              children: [
+                const SizedBox(height: 20),
+                SettingsItem(icon: Icons.language, title: 'Languages'),
+              ],
+            ),
           ),
         ],
       ),
       backgroundColor: JPrimaryColor,
+    );
+  }
+}
+
+class SettingsItem extends StatelessWidget {
+  const SettingsItem({super.key, required this.icon, required this.title});
+
+  final IconData icon;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(30),
+      child: Row(
+        children: [
+          Icon(icon, color: JPrimaryColor),
+          const SizedBox(width: 20),
+          Text(title, style: TextStyle(fontSize: 16, color: JPrimaryColor)),
+        ],
+      ),
     );
   }
 }
