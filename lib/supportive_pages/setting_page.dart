@@ -43,6 +43,11 @@ class _SettingPageState extends State<SettingPage> {
                 const SizedBox(height: 20),
                 SettingsItem(icon: Icons.language, title: 'Languages'),
                 SettingsItem(icon: Icons.settings, title: 'Account Settings'),
+                SettingsItem(
+                  icon: Icons.notifications,
+                  title: 'Notification Preferences',
+                ),
+                SettingsItem(icon: Icons.delete, title: 'Delete My Account'),
               ],
             ),
           ),
@@ -62,7 +67,7 @@ class SettingsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(30),
+      padding: const EdgeInsets.fromLTRB(30, 15, 30, 25),
       child: Row(
         children: [
           Icon(icon, color: JPrimaryColor),
