@@ -42,6 +42,7 @@ class _SettingPageState extends State<SettingPage> {
               children: [
                 const SizedBox(height: 20),
                 SettingsItem(icon: Icons.language, title: 'Languages'),
+                SettingsItem(icon: Icons.settings, title: 'Account Settings'),
               ],
             ),
           ),
