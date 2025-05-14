@@ -75,16 +75,16 @@ class ChatUI extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Icon(Icons.add, size: 30, color: Color(0xFF1C2C56)),
+                Icon(Icons.add, size: 30, color: Color(0xFF1C2D5E)),
                 Text(
                   'Messages',
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.normal,
-                    color: Color(0xFF1C2C56),
+                    color: Color(0xFF1C2D5E),
                   ),
                 ),
-                Icon(Icons.search, size: 30, color: Color(0xFF1C2C56)),
+                Icon(Icons.search, size: 30, color: Color(0xFF1C2D5E)),
               ],
             ),
           ),
@@ -141,7 +141,7 @@ class ChatUI extends StatelessWidget {
                           Container(
                             padding: const EdgeInsets.all(6),
                             decoration: const BoxDecoration(
-                              color: Color(0xFF1C2C56),
+                              color: Color(0xFF1C2D5E),
                               shape: BoxShape.circle,
                             ),
                             child: Text(
@@ -170,8 +170,9 @@ class ChatUI extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Container(
+        height: 120,
         decoration: BoxDecoration(
-          color: Color(0xFF233A66),
+          color: Color(0xFF1C2D5E),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30),
             topRight: Radius.circular(30),
