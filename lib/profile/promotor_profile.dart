@@ -8,21 +8,31 @@ class PromotorProfile extends StatelessWidget {
     return Scaffold(
       
       body: Column(
-        
         children: [
-           Container(
-                height: 240,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                 
-                ),
-              ),
           Stack(
             children: [
-              
+              Container(
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Color(0xFFF4F7FE),
+                   borderRadius: BorderRadius.only(
+      topLeft: Radius.circular(30),
+      topRight: Radius.circular(30),
+    ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+   
+  ),
+
+              ),
               Positioned(
-                top: 120,
-                left: 16,
+                top: 100,
+                left: 24,
+                right: 24,
                 child: Row(
                   children: [
                     CircleAvatar(
@@ -33,59 +43,65 @@ class PromotorProfile extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Tanya Nur',
+                        Text('R.S Rusiru',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 11,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xFF1F2A44))),
                         SizedBox(height: 4),
                         Text('Age', style: TextStyle(color: Colors.grey)),
                         Text('Status', style: TextStyle(color: Colors.grey)),
-                        Text('Registration ID', style: TextStyle(color: Colors.grey)),
+                        Text('NIC', style: TextStyle(color: Colors.grey)),
                       ],
                     )
                   ],
                 ),
-              ),
+              )
             ],
           ),
-          SizedBox(height: 20), // Add space between red header and next section
           Expanded(
             child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Full Name', style: TextStyle(color: Colors.grey)),
-                        Text('Tanya Nur', style: TextStyle(fontSize: 16)),
-                        SizedBox(height: 20),
-                        Text('Name with initials', style: TextStyle(color: Colors.grey)),
-                        Text('Tanya Nur', style: TextStyle(fontSize: 16)),
-                        SizedBox(height: 20),
-                        Text('E-mail', style: TextStyle(color: Colors.grey)),
-                        Text(
-                          'tanyabeautybar@gmail.com',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.blue,
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        Text('Address', style: TextStyle(color: Colors.grey)),
-                        Text('*******************************', style: TextStyle(fontSize: 16)),
-                        SizedBox(height: 20),
-                        Text('Phone Number', style: TextStyle(color: Colors.grey)),
-                        Text('077-1234556', style: TextStyle(fontSize: 16)),
-                        SizedBox(height: 20),
-                        Text('Official Phone Number', style: TextStyle(color: Colors.grey)),
-                        Text('077-1234556', style: TextStyle(fontSize: 16)),
-                      ],
-                    ),
+                  SizedBox(height: 10),
+
+                  Text('Full Name', style: TextStyle(color: Colors.grey)),
+                  Text('Regawan sudarshan Rusiru', style: TextStyle(fontSize: 16)),
+
+                  SizedBox(height: 20),
+
+                  Text('Name with initials', style: TextStyle(color: Colors.grey)),
+                  Text('R.S Rusiru', style: TextStyle(fontSize: 16)),
+
+                  SizedBox(height: 20),
+
+                  Text('E-mail', style: TextStyle(color: Colors.grey)),
+                  Text('rusirusudarshan678@gmail.com',
+                      style: TextStyle(fontSize: 16, color: Colors.blue, decoration: TextDecoration.underline)),
+
+                  SizedBox(height: 20),
+
+                  Text('Adress', style: TextStyle(color: Colors.grey)),
+                  Text('*******************************', style: TextStyle(fontSize: 16)),
+
+                  SizedBox(height: 20),
+
+                  Text('Phone number', style: TextStyle(color: Colors.grey)),
+                  Text('077-1234556', style: TextStyle(fontSize: 16)),
+
+                  SizedBox(height: 30),
+
+                  // Rating
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(5, (index) {
+                      return Icon(
+                        Icons.star,
+                        color: index < 3 ? Colors.black : Colors.black12,
+                      );
+                    }),
                   ),
                 ],
               ),
@@ -106,7 +122,7 @@ class PromotorProfile extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'More'),
         ],
       ),
-      backgroundColor: Color(0xFFF4F7FE),
+       backgroundColor: Color(0xFFF4F7FE),
     );
   }
-}
+} 
