@@ -1,39 +1,39 @@
 import 'package:flutter/material.dart';
 
+// Define the JPrimaryLightColor constant
+
+
 class UserPro extends StatelessWidget {
   const UserPro({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      body: Column(
-        children: [
-          Stack(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Color(0xFF233A66)),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+            ),
+            centerTitle: true,
+          ),
+               body: Column(
             children: [
+              SizedBox(height: 20),
               Container(
-                height: 200,
+                height: 650,
                 decoration: BoxDecoration(
-                  color: Color(0xFFF4F7FE),
-                   borderRadius: BorderRadius.only(
-      topLeft: Radius.circular(30),
-      topRight: Radius.circular(30),
-    ),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-   
-  ),
-
-              ),
-              Positioned(
-                top: 100,
-                left: 24,
-                right: 24,
+              padding: const EdgeInsets.all(20),
+              
+        
                 child: Row(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+   
                   children: [
                     CircleAvatar(
                       radius: 40,
@@ -56,73 +56,14 @@ class UserPro extends StatelessWidget {
                     )
                   ],
                 ),
+                
+                
               )
+              
             ],
           ),
-          Expanded(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 10),
-
-                  Text('Full Name', style: TextStyle(color: Colors.grey)),
-                  Text('Regawan sudarshan Rusiru', style: TextStyle(fontSize: 16)),
-
-                  SizedBox(height: 20),
-
-                  Text('Name with initials', style: TextStyle(color: Colors.grey)),
-                  Text('R.S Rusiru', style: TextStyle(fontSize: 16)),
-
-                  SizedBox(height: 20),
-
-                  Text('E-mail', style: TextStyle(color: Colors.grey)),
-                  Text('rusirusudarshan678@gmail.com',
-                      style: TextStyle(fontSize: 16, color: Colors.blue, decoration: TextDecoration.underline)),
-
-                  SizedBox(height: 20),
-
-                  Text('Adress', style: TextStyle(color: Colors.grey)),
-                  Text('*******************************', style: TextStyle(fontSize: 16)),
-
-                  SizedBox(height: 20),
-
-                  Text('Phone number', style: TextStyle(color: Colors.grey)),
-                  Text('077-1234556', style: TextStyle(fontSize: 16)),
-
-                  SizedBox(height: 30),
-
-                  // Rating
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(5, (index) {
-                      return Icon(
-                        Icons.star,
-                        color: index < 3 ? Colors.black : Colors.black12,
-                      );
-                    }),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.white,
-        backgroundColor: Color(0xFF1F2A44),
-        unselectedItemColor: Colors.white60,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
-          BottomNavigationBarItem(icon: Icon(Icons.work), label: 'Jobs'),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Notifications'),
-          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'More'),
-        ],
-      ),
-       backgroundColor: Color(0xFFF4F7FE),
-    );
-  }
-} 
+          backgroundColor: Colors.white,
+    
+        );
+      }
+    }
