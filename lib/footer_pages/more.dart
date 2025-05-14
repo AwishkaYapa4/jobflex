@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/models/setting.dart';
-import 'package:jobflex/widget/constants.dart';
 import 'package:jobflex/widget/setting_tile.dart';
 
 class More extends StatelessWidget {

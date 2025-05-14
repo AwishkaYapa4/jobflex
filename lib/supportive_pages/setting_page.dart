@@ -1,7 +1,4 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:jobflex/models/setting.dart';
 import 'package:jobflex/widget/constants.dart';
 
 class SettingPage extends StatefulWidget {
