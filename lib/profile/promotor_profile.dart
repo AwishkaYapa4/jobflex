@@ -10,6 +10,7 @@ class PromotorProfile extends StatelessWidget {
       body: Column(
         children: [
 <<<<<<< HEAD
+<<<<<<< HEAD
           Container(
             height: 240,
             decoration: BoxDecoration(color: JPrimaryColor),
@@ -19,6 +20,10 @@ class PromotorProfile extends StatelessWidget {
 =======
           Stack(
             children: [
+=======
+          Stack(
+            children: [
+>>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
               Container(
                 height: 200,
                 decoration: BoxDecoration(
@@ -37,6 +42,9 @@ class PromotorProfile extends StatelessWidget {
   ),
 
               ),
+<<<<<<< HEAD
+>>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
+=======
 >>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
               Positioned(
                 top: 100,
@@ -55,6 +63,7 @@ class PromotorProfile extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
 <<<<<<< HEAD
+<<<<<<< HEAD
                         Text(
                           'Tanya Nur',
                           style: TextStyle(
@@ -71,6 +80,8 @@ class PromotorProfile extends StatelessWidget {
                           style: TextStyle(color: Colors.grey),
                         ),
 =======
+=======
+>>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
                         Text('R.S Rusiru',
                             style: TextStyle(
                                 fontSize: 11,
@@ -80,6 +91,9 @@ class PromotorProfile extends StatelessWidget {
                         Text('Age', style: TextStyle(color: Colors.grey)),
                         Text('Status', style: TextStyle(color: Colors.grey)),
                         Text('NIC', style: TextStyle(color: Colors.grey)),
+<<<<<<< HEAD
+>>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
+=======
 >>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
                       ],
                     ),
@@ -94,6 +108,7 @@ class PromotorProfile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+<<<<<<< HEAD
 <<<<<<< HEAD
                   Container(
                     width: double.infinity,
@@ -143,6 +158,8 @@ class PromotorProfile extends StatelessWidget {
                       ],
                     ),
 =======
+=======
+>>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
                   SizedBox(height: 10),
 
                   Text('Full Name', style: TextStyle(color: Colors.grey)),
@@ -180,6 +197,9 @@ class PromotorProfile extends StatelessWidget {
                         color: index < 3 ? Colors.black : Colors.black12,
                       );
                     }),
+<<<<<<< HEAD
+>>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
+=======
 >>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
                   ),
                 ],
@@ -206,6 +226,9 @@ class PromotorProfile extends StatelessWidget {
         ],
       ),
        backgroundColor: Color(0xFFF4F7FE),
+<<<<<<< HEAD
+>>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
+=======
 >>>>>>> f56c0577cd0791076766487f8178f8ceb9387613
     );
   }
