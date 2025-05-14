@@ -19,13 +19,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const PromotorProfile(),
     );
-=======
+
     return MaterialApp(debugShowCheckedModeBanner: false, home: const PromotorProfile()
->>>>>>> 669847b5ba98a305b5ad90113a13d547a4487db4
+
   }
 }
