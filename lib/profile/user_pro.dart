@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/constants.dart';
 
-// Define the JPrimaryLightColor constant
+
 
 
 class UserPro extends StatelessWidget {
