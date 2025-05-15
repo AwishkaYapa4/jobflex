@@ -50,7 +50,7 @@ class _SettingPageState extends State<SettingPage> {
           ),
         ],
       ),
-      backgroundColor: JPrimaryColor,
+      backgroundColor: const Color.fromRGBO(30, 50, 92, 1),
     );
   }
 }
