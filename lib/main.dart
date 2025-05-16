@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
 import 'package:jobflex/footer_pages/more.dart';
 import 'package:jobflex/profile/user_pro.dart';
 import 'package:jobflex/startpages/loging.dart';
@@ -7,9 +6,8 @@ import 'package:jobflex/supportive_pages/setting_page.dart';
 import 'package:jobflex/screan/home.dart';
 import 'package:jobflex/profile/promotor_profile.dart';
 import 'package:jobflex/widget/footer.dart';
-=======
 import 'package:jobflex/supportive_pages/setting_page.dart';
->>>>>>> Stashed changes
+import 'package:jobflex/supportive_pages/invite_friend.dart';
 
 void main() {
   runApp(const MyApp());
