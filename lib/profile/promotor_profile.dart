@@ -101,7 +101,9 @@ class PromotorProfile extends StatelessWidget {
               
             ],
           ),
-          backgroundColor: Color(0xFFECF1FA),
+          backgroundColor: Colors.amber,
+
+          
     
         );
       }
