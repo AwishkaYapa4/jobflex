@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/constants.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InviteFriend extends StatelessWidget {
   const InviteFriend({super.key});
