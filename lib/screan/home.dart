@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final jobCategories = [
-      {'title': 'Event Crew', 'image': 'assets/images/event_crew.png'},
+      {'title': 'Event Crew', 'image': 'img/Adobe illustrations - Steve Scott.jpeg'},
       {'title': 'Super market', 'image': 'assets/images/super_market.png'},
       {'title': 'Supportive team', 'image': 'assets/images/supportive_team.png'},
       {'title': 'Marketing', 'image': 'assets/images/marketing.png'},
