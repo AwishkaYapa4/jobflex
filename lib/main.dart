@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:jobflex/chat/chat.dart';
 import 'package:jobflex/chat/chat_box.dart';
+import 'package:jobflex/chat/new_chat.dart';
 
 import 'package:jobflex/footer_pages/more.dart';
 import 'package:jobflex/profile/user_pro.dart';
