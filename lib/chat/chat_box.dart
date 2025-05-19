@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(ChatApp());
-}
-
-class ChatApp extends StatelessWidget {
-  const ChatApp({super.key});
+class ChatBox extends StatelessWidget {
+  const ChatBox({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,23 +35,23 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEAF2FF),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
             // Profile
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(40.0),
               child: Row(
                 children: [
                   CircleAvatar(
                     radius: 30,
                     backgroundImage: AssetImage('assets/tanya.avif'),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 20),
                   Text(
                     'Tanya Nur',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
                   ),
                 ],
               ),
@@ -92,7 +88,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         horizontal: 14,
                       ),
                       decoration: BoxDecoration(
-                        color: Color(0xFF1D2A57),
+                        color: Color(0xFF233A66),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
@@ -107,17 +103,18 @@ class _ChatScreenState extends State<ChatScreen> {
 
             // Typing Input Field (above navigation bar)
             Padding(
-              padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
+              padding: EdgeInsets.fromLTRB(16, 12, 16, 24),
               child: Row(
                 children: [
                   Expanded(
                     child: Container(
+                      height: 40,
                       padding: EdgeInsets.symmetric(
                         horizontal: 16,
                         vertical: 12,
                       ),
                       decoration: BoxDecoration(
-                        color: Color(0xFF1D2A57),
+                        color: Color(0xFF233A66),
                         borderRadius: BorderRadius.circular(30),
                         boxShadow: [
                           BoxShadow(
@@ -132,7 +129,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   SizedBox(width: 10),
                   CircleAvatar(
-                    backgroundColor: Color(0xFF1D2A57),
+                    backgroundColor: Color(0xFF233A66),
                     child: Icon(Icons.send, color: Colors.white),
                   ),
                 ],
@@ -145,13 +142,14 @@ class _ChatScreenState extends State<ChatScreen> {
       // Bottom Navigation Bar
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Color(0xFF1C2C56),
+          color: Color(0xFF233A66),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30),
             topRight: Radius.circular(30),
           ),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        height: 120,
+        padding: EdgeInsets.symmetric(horizontal: 10),
         child: BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (index) {
