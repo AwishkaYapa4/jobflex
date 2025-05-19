@@ -22,9 +22,9 @@ class UserPro extends StatelessWidget {
           ),
                body: Column(
             children: [
-              SizedBox(height: 20),
+              
               Container(
-                height: 650,
+                height: 660,
                 decoration: BoxDecoration(
                   color: Color(0xFFECF1FA),
                   borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
@@ -43,8 +43,10 @@ class UserPro extends StatelessWidget {
             backgroundImage: AssetImage('img/supermarket.png'), // Replace with your image
           ),
           SizedBox(width: 16),
+
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            
             children: [
               Text('R.S Rusiru',
                   style: TextStyle(
@@ -60,7 +62,9 @@ class UserPro extends StatelessWidget {
           )
         ],
       ),
+      
       SizedBox(height: 20),
+      
       // Full Name
               Text('Full Name', style: TextStyle(color: Color(0xFFA4BBE4))),
               Text('Regawan sudarshan Rusiru',
@@ -118,7 +122,7 @@ Center(
               
             ],
           ),
-          backgroundColor: Color(0xFFECF1FA),
+          backgroundColor: Color(0xFF233A66),
     
         );
       }

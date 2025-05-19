@@ -9,19 +9,19 @@ class PromotorProfile extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFECF1FA),
+        elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Color(0xFF233A66)),
           onPressed: () {
             Navigator.pop(context);
           },
-            ),
-            centerTitle: true,
-          ),
-               body: Column(
-            children: [
-              SizedBox(height: 20),
+        ),
+      ),
+      body: Column(
+        children: [
+              
               Container(
-                height: 650,
+                height: 675,
                 decoration: BoxDecoration(
                   color: Color(0xFFECF1FA),
                   borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
@@ -98,10 +98,15 @@ class PromotorProfile extends StatelessWidget {
   ),
                 
               )
+
               
             ],
           ),
-          backgroundColor: Colors.amber,
-        );
-      }
+            backgroundColor: Color(0xFF233A66),
+          );
     }
+  }
+  
+  
+    
+  
