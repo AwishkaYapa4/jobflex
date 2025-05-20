@@ -17,6 +17,7 @@ import 'package:jobflex/widget/constants.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/payment/payment.dart';
 import 'package:jobflex/startpages/sign_up.dart';
+import 'package:jobflex/profile/user_admin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SignUpPage());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: UserAdminScreen(),
+    );
   }
 }
