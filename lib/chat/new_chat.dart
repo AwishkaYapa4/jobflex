@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class NewChat extends StatelessWidget {
+  const NewChat({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +114,7 @@ class NewConversationScreen extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 50),
+          padding: EdgeInsets.symmetric(horizontal: 10),
           child: BottomNavigationBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
