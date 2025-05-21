@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:jobflex/chat/chat.dart';
 import 'package:jobflex/chat/chat_box.dart';
 import 'package:jobflex/chat/new_chat.dart';
+import 'package:jobflex/chat/chat_search.dart';
 
 import 'package:jobflex/footer_pages/more.dart';
 import 'package:jobflex/payment/payment.dart';
@@ -40,9 +41,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const NewChat(),
+      home: const ChatSearch(),
     );
 
-    return MaterialApp(debugShowCheckedModeBanner: false, home: NewChat());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: ChatSearch());
   }
 }
