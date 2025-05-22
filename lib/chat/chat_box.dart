@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/widget/footer.dart';
 
 class ChatBox extends StatelessWidget {
   const ChatBox({super.key});

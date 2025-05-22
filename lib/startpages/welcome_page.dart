@@ -19,11 +19,7 @@ class WelcomePage extends StatelessWidget {
             height: 735,
             width: double.infinity,
             child: Center(
-              child: Image.asset(
-                'Assets/jobflex.png',
-                width: 280,
-                height: 280,
-              ),
+              child: Image.asset('Icons/Logo.png', width: 280, height: 280),
             ),
           ),
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/constants.dart';
+import 'package:jobflex/widget/footer.dart';
 
 class PaymentScreen extends StatefulWidget {
   @override
@@ -17,7 +18,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
         backgroundColor: Color(0xFFF2F6FF),
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color :Color(0xFF233A66)),
+          icon: Icon(Icons.arrow_back, color: Color(0xFF233A66)),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -41,14 +42,17 @@ class _PaymentScreenState extends State<PaymentScreen> {
             SizedBox(height: 15),
             _buildTextField('Account Number'),
             SizedBox(height: 15),
-            _buildTextField('Reference Note', hint: 'e.g., "Use your User ID as the reference"'),
+            _buildTextField(
+              'Reference Note',
+              hint: 'e.g., "Use your User ID as the reference"',
+            ),
             SizedBox(height: 15),
             _buildUploadBox(),
             SizedBox(height: 30),
           ],
         ),
       ),
-          bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),
         backgroundColor: const Color(0xFF233A66),
@@ -86,7 +90,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+        Text(
+          label,
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+        ),
         SizedBox(height: 8),
         TextField(
           decoration: InputDecoration(
@@ -106,7 +113,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   Widget _buildUploadBox() {
     return Container(
-      height: 160,
+      height: 120,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Color(0xFFB9B9B9),
@@ -114,7 +121,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
         border: Border.all(color: Color(0xFFB9B9B9)),
       ),
       child: Center(
-        child: Text("Upload Receipt", style: TextStyle(color: Color(0xFF233A66))),
+        child: Text(
+          "Upload Receipt",
+          style: TextStyle(color: Color(0xFF233A66)),
+        ),
       ),
     );
   }
