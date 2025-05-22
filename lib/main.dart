@@ -18,6 +18,7 @@ import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/payment/payment.dart';
 import 'package:jobflex/startpages/sign_up.dart';
 import 'package:jobflex/profile/user_admin.dart';
+import 'package:jobflex/supportive_pages/help_center.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: UserAdminScreen(),
+      home: HelpCenterPage(),
     );
   }
 }
