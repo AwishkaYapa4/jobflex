@@ -31,7 +31,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+<<<<<<< Updated upstream
       home: HelpCenterPage(),
+=======
+      home: const InviteFriendScreen(),
+>>>>>>> Stashed changes
     );
   }
 }
