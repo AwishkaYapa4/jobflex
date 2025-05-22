@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/widget/constants.dart';
+import 'package:jobflex/widget/footer.dart';
 
 class PromoAdmin extends StatelessWidget {
   const PromoAdmin({Key? key}) : super(key: key);
@@ -179,12 +181,13 @@ class PromoAdmin extends StatelessWidget {
       bottomSheet: Container(
         height: 250,
         decoration: const BoxDecoration(
-          color: Color(0xFF1A2A4B),
+          color: JPrimaryColor,
           borderRadius: BorderRadius.vertical(top: Radius.circular(0)),
         ),
         child: Center(child: Image.asset('Icons/Logo.png', height: 150)),
       ),
       backgroundColor: Colors.white,
+      bottomNavigationBar: const Footer(),
     );
   }
 }

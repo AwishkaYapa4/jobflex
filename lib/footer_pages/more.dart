@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/models/setting.dart';
+import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/widget/setting_tile.dart';
 
 class More extends StatelessWidget {
@@ -59,6 +60,7 @@ class More extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const Footer(),
     );
   }
 }
