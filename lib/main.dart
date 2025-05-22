@@ -7,6 +7,7 @@ import 'package:jobflex/chat/chat_search.dart';
 
 import 'package:jobflex/footer_pages/more.dart';
 import 'package:jobflex/payment/payment.dart';
+import 'package:jobflex/profile/user_admin.dart';
 import 'package:jobflex/profile/user_pro.dart';
 import 'package:jobflex/startpages/loging.dart';
 import 'package:jobflex/supportive_pages/setting_page.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const ChatSearch(),
+      home: const UserAdmin(),
     );
 
     return MaterialApp(debugShowCheckedModeBanner: false, home: ChatSearch());
