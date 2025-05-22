@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
 
+import 'package:jobflex/chat/chat.dart';
+import 'package:jobflex/chat/chat_box.dart';
+import 'package:jobflex/chat/new_chat.dart';
+import 'package:jobflex/chat/chat_search.dart';
+
 import 'package:jobflex/footer_pages/more.dart';
 import 'package:jobflex/payment/payment.dart';
+import 'package:jobflex/profile/promo_admin.dart';
+import 'package:jobflex/profile/user_admin.dart';
 import 'package:jobflex/profile/user_pro.dart';
 import 'package:jobflex/startpages/loging.dart';
+import 'package:jobflex/startpages/welcome_page.dart';
 import 'package:jobflex/supportive_pages/setting_page.dart';
 import 'package:jobflex/screan/home.dart';
 import 'package:jobflex/profile/promotor_profile.dart';
 import 'package:jobflex/widget/footer.dart';
+
+import 'package:jobflex/supportive_pages/setting_page.dart';
+import 'package:jobflex/supportive_pages/invite_friend.dart';
+
+import 'package:jobflex/supportive_pages/setting_page.dart';
+import 'package:jobflex/widget/constants.dart';
+import 'package:jobflex/widget/footer.dart';
+
 import 'package:jobflex/supportive_pages/invite_friend.dart';
 import 'package:jobflex/widget/constants.dart';
 import 'package:jobflex/supportive_pages/setting_page.dart';
@@ -29,6 +45,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 <<<<<<< Updated upstream
@@ -37,5 +54,8 @@ class MyApp extends StatelessWidget {
       home: const InviteFriendScreen(),
 >>>>>>> Stashed changes
     );
+=======
+    return MaterialApp(debugShowCheckedModeBanner: false, home: WelcomePage());
+>>>>>>> ffe6ddff33183fad672d4e46781433a32016a08d
   }
 }
