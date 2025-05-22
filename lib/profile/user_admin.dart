@@ -86,15 +86,16 @@ class UserAdmin extends StatelessWidget {
         ),
       ),
       bottomSheet: Container(
-        height: 150,
+        height: 300,
         decoration: const BoxDecoration(
           color: Color(0xFF1A2A4B),
-          borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(0)),
         ),
         child: Center(
           child: Image.asset(
-            'img/supermarket.png', // Replace with your image path
-            height: 100,
+            'Icons/Logo.png',
+            // Replace with your image path
+            height: 180,
           ),
         ),
       ),
