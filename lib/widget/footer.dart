@@ -1,42 +1,46 @@
 import 'package:flutter/material.dart';
-import 'package:jobflex/widget/constants.dart';
 
-class Footer extends StatelessWidget {
+class Footer extends StatefulWidget {
   const Footer({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: JPrimaryColor,
-        boxShadow: [
-          BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1)),
-        ],
-      ),
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildFooterItem(Icons.chat_bubble_outline, 'Chat'),
-              _buildFooterItem(Icons.work_outline, 'Jobs'),
-              _buildFooterItem(Icons.home_outlined, 'Home'),
-              _buildFooterItem(Icons.notifications_none, 'Notifications'),
-              _buildFooterItem(Icons.more_horiz, 'More'),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+  State<Footer> createState() => _FooterState();
+}
 
-  Widget _buildFooterItem(IconData icon, String label) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(icon, color: Colors.white, size: 30), // Increased icon size
-        Text(label, style: const TextStyle(color: Colors.white)),
+class _FooterState extends State<Footer> {
+  int _currentIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      currentIndex: _currentIndex,
+      onTap: (index) => setState(() => _currentIndex = index),
+      backgroundColor: const Color(0xFF233A66),
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white,
+      showUnselectedLabels: true,
+      type: BottomNavigationBarType.fixed,
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.chat_bubble, color: Colors.white),
+          label: 'Chat',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.work, color: Colors.white),
+          label: 'Jobs',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home, color: Colors.white),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.notifications, color: Colors.white),
+          label: 'Notifications',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.more_horiz, color: Colors.white),
+          label: 'More',
+        ),
       ],
     );
   }
