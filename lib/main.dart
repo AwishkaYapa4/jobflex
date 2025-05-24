@@ -8,6 +8,7 @@ import 'package:jobflex/payment/payment.dart';
 import 'package:jobflex/profile/promo_admin.dart';
 import 'package:jobflex/profile/user_admin.dart';
 import 'package:jobflex/profile/user_pro.dart';
+import 'package:jobflex/screan/categories.dart';
 import 'package:jobflex/startpages/loging.dart';
 import 'package:jobflex/supportive_pages/setting_page.dart';
 import 'package:jobflex/screan/home.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PaymentScreen(),
+      home: CategoriesScreen(),
     );
   }
 }
