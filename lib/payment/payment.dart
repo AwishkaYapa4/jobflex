@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/widget/constants.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -48,37 +49,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
           ],
         ),
       ),
-          bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
-        backgroundColor: const Color(0xFF233A66),
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_bubble, color: Color(0xFFF2F6FF)),
-            label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.work, color: Color(0xFFF2F6FF)),
-            label: 'Jobs',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Color(0xFFF2F6FF)),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications, color: Color(0xFFF2F6FF)),
-            label: 'Notifications',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.more_horiz, color: Color(0xFFF2F6FF)),
-            label: 'More',
-          ),
-        ],
-      ),
+            bottomNavigationBar: const Footer(),
     );
   }
 
@@ -106,7 +77,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   Widget _buildUploadBox() {
     return Container(
-      height: 160,
+      height: 300,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Color(0xFFB9B9B9),

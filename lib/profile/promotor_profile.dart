@@ -20,7 +20,7 @@ class PromotorProfile extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: 20),
+        SizedBox(width: 16),
           Container(
             height: 650,
             decoration: BoxDecoration(
@@ -121,7 +121,7 @@ class PromotorProfile extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: Colors.amber,
+      backgroundColor: Color(0xFFECF1FA),
       bottomNavigationBar: const Footer(),
     );
   }
