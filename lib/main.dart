@@ -25,14 +25,14 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class NewChat extends StatelessWidget {
+  const NewChat({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HelpCenterPage(),
+      home: const NewChat(),
     );
   }
 }
