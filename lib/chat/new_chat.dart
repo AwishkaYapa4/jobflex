@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/widget/footer.dart' show Footer;
 
 class NewChat extends StatelessWidget {
   const NewChat({super.key});
@@ -82,7 +83,7 @@ class NewConversationScreen extends StatelessWidget {
                     child: Container(
                       height: 40,
                       decoration: BoxDecoration(
-                        color: Color(0xFF1C2D5E),
+                        color: Color(0xFF233A66),
                         borderRadius: BorderRadius.circular(25),
                       ),
                     ),
@@ -90,7 +91,7 @@ class NewConversationScreen extends StatelessWidget {
                   const SizedBox(width: 8),
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFF1C2D5E),
+                      color: Color(0xFF233A66),
                       shape: BoxShape.circle,
                     ),
                     padding: const EdgeInsets.all(12),
@@ -103,40 +104,8 @@ class NewConversationScreen extends StatelessWidget {
         ),
       ),
 
-      // Bottom Navigation Bar (your version)
-      bottomNavigationBar: Container(
-        height: 120,
-        decoration: BoxDecoration(
-          color: Color(0xFF1C2D5E),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
-        ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 50),
-          child: BottomNavigationBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white,
-            type: BottomNavigationBarType.fixed,
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
-              BottomNavigationBarItem(icon: Icon(Icons.work), label: 'Jobs'),
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.notifications),
-                label: 'Notifications',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.more_horiz),
-                label: 'More',
-              ),
-            ],
-          ),
-        ),
-      ),
+      // Bottom Navigation Bar
+      bottomNavigationBar: const Footer(),
     );
   }
 }
