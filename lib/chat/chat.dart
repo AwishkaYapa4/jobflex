@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/widget/footer.dart';
 
 class Chat extends StatelessWidget {
   const Chat({super.key});
@@ -165,37 +166,7 @@ class ChatUI extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        height: 120,
-        decoration: BoxDecoration(
-          color: Color(0xFF1C2D5E),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: BottomNavigationBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
-            BottomNavigationBarItem(icon: Icon(Icons.work), label: 'Jobs'),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
-              label: 'Notifications',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.more_horiz),
-              label: 'More',
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: const Footer(),
     );
   }
 }
