@@ -89,7 +89,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      //bottomNavigationBar: const Footer(),
+      bottomNavigationBar: const Footer(),
     );
   }
 }
