@@ -177,6 +177,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           ],
         ),
       ),
+
       // Bottom Navigation Bar
       bottomNavigationBar: const Footer(),
     );
