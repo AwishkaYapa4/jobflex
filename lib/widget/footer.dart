@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/chat/chat.dart'; // Import the Chat page
 
 class Footer extends StatefulWidget {
   const Footer({Key? key}) : super(key: key);
@@ -14,7 +15,21 @@ class _FooterState extends State<Footer> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: _currentIndex,
-      onTap: (index) => setState(() => _currentIndex = index),
+      onTap: (index) {
+        setState(() {
+          _currentIndex = index;
+        });
+
+        // Navigation logic
+        if (index == 0) {
+          // Navigate to Chat page
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Chat()),
+          );
+        }
+        // Add navigation logic for other indices (Jobs, Home, Notifications, More)
+      },
       backgroundColor: const Color(0xFF233A66),
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.white,

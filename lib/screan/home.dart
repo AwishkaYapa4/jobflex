@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/constants.dart';
+import 'package:jobflex/widget/footer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,9 +8,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final jobCategories = [
-      {'title': 'Event Crew', 'image': 'assets/images/Adobe illustrations - Steve Scott.jpeg'},
+      {
+        'title': 'Event Crew',
+        'image': 'assets/images/Adobe illustrations - Steve Scott.jpeg',
+      },
       {'title': 'Super market', 'image': 'assets/images/super_market.png'},
-      {'title': 'Supportive team', 'image': 'assets/images/supportive_team.png'},
+      {
+        'title': 'Supportive team',
+        'image': 'assets/images/supportive_team.png',
+      },
       {'title': 'Marketing', 'image': 'assets/images/marketing.png'},
       {'title': 'Pet care', 'image': 'assets/images/pet_care.png'},
       {'title': 'Health Care', 'image': 'assets/images/health_care.png'},
@@ -36,13 +43,13 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Hi [User’s First Name], Find Your Next Flex Job Today!',
+                    '',
                     style: TextStyle(fontSize: 14, color: Colors.black54),
                   ),
                   Icon(Icons.search, color: Colors.black54),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Expanded(
                 child: GridView.builder(
                   itemCount: jobCategories.length,
@@ -82,20 +89,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.blue,
-        backgroundColor: Color(0xFF1F2A44),
-        unselectedItemColor: Colors.grey,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
-          BottomNavigationBarItem(icon: Icon(Icons.work), label: 'Jobs'),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Notifications'),
-          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
-        ],
-      ),
+      //bottomNavigationBar: const Footer(),
     );
   }
 }
-

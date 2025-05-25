@@ -28,9 +28,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< Updated upstream
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: CategoriesScreen(),
     );
+=======
+    return MaterialApp(debugShowCheckedModeBanner: false, home: const More());
+>>>>>>> Stashed changes
   }
 }
