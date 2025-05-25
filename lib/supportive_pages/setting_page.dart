@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/constants.dart';
+import 'package:jobflex/widget/footer.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -51,6 +52,7 @@ class _SettingPageState extends State<SettingPage> {
         ],
       ),
       backgroundColor: const Color.fromRGBO(30, 50, 92, 1),
+      bottomNavigationBar: const Footer(),
     );
   }
 }
