@@ -4,6 +4,7 @@ import 'package:jobflex/chat/chat_box.dart';
 import 'package:jobflex/chat/new_chat.dart';
 import 'package:jobflex/chat/chat_search.dart';
 import 'package:jobflex/footer_pages/more.dart';
+import 'package:jobflex/payment/pay_succ.dart';
 import 'package:jobflex/payment/payment.dart';
 import 'package:jobflex/profile/promo_admin.dart';
 import 'package:jobflex/profile/user_admin.dart';
@@ -28,6 +29,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SettingPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
   }
 }

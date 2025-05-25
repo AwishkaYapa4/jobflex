@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/widget/footer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -117,33 +118,7 @@ class HelpCenterPage extends StatelessWidget {
           ),
         ),
       ),
-
-      // Bottom Navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: const Color(0xFF233A66), // Navy Blue
-        selectedItemColor: Colors.white,
-        unselectedItemColor: const Color(0xFFA4BBE4), // Light blue font
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_bubble_outline),
-            label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.work_outline),
-            label: 'Jobs',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_outlined),
-            label: 'Notifications',
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
-        ],
-      ),
+      bottomNavigationBar: const Footer(),
     );
   }
 }

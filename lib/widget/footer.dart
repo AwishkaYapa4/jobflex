@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/chat/chat.dart'; // Import the Chat page
+import 'package:jobflex/screan/home.dart'; // Import the Home page
+import 'package:jobflex/screan/categories.dart';
+import 'package:jobflex/supportive_pages/help_center.dart'; // Import the Help Center page
+import 'package:jobflex/footer_pages/more.dart';
 
 class Footer extends StatefulWidget {
   const Footer({Key? key}) : super(key: key);
@@ -27,9 +31,39 @@ class _FooterState extends State<Footer> {
             context,
             MaterialPageRoute(builder: (context) => const Chat()),
           );
+        } else if (index == 1) {
+          // Navigate to Categories page
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Chat(),
+            ), // Replace Chat() with CategoriesPage()
+          );
+        } else if (index == 2) {
+          // Corrected index for Home
+          // Navigate to Home page
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HomePage()),
+          );
+        } else if (index == 3) {
+          // Corrected index for Home
+          // Navigate to Home page
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HelpCenterPage()),
+          );
+        } else if (index == 4) {
+          // Corrected index for Home
+          // Navigate to Home page
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const More()),
+          );
         }
-        // Add navigation logic for other indices (Jobs, Home, Notifications, More)
+        // Add navigation logic for other indices (Notifications, More)
       },
+
       backgroundColor: const Color(0xFF233A66),
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.white,
