@@ -1,31 +1,30 @@
-import 'package:flutter/cupertino.dart';
-import 'package:jobflex/widget/constants.dart';
+import 'package:flutter/material.dart';
 import 'package:jobflex/models/setting.dart';
 
 class SettingTile extends StatelessWidget {
   final Setting setting;
-  const SettingTile({super.key, required this.setting});
+  const SettingTile({Key? key, required this.setting}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, setting.route);
+      },
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            width: 50,
-            height: 50,
-            margin: const EdgeInsets.only(bottom: 5),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-            child: Icon(setting.icon, color: JPrimaryColor),
+          Row(
+            children: [
+              Icon(setting.icon, color: const Color(0xFF233A66)),
+              const SizedBox(width: 20),
+              Text(
+                setting.title,
+                style: const TextStyle(fontSize: 18, color: Color(0xFF233A66)),
+              ),
+            ],
           ),
-          const SizedBox(width: 5),
-          Text(
-            setting.title,
-            style: const TextStyle(fontSize: 20, color: JPrimaryColor),
-          ),
-          const Spacer(),
-          const Icon(CupertinoIcons.chevron_forward, color: JPrimaryColor),
+          const Icon(Icons.arrow_forward_ios_sharp, color: Color(0xFF233A66)),
         ],
       ),
     );
