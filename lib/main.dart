@@ -19,7 +19,7 @@ import 'package:jobflex/widget/constants.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/startpages/sign_up.dart';
 import 'package:jobflex/supportive_pages/help_center.dart';
-import 'package:jobflex/models/setting.dart'; // Import the Setting model
+import 'package:jobflex/models/setting.dart'; 
 
 void main() {
   runApp(const MyApp());
@@ -36,13 +36,13 @@ class MyApp extends StatelessWidget {
       routes: {
         '/':
             (context) =>
-                const More(), // Set More as the initial page for testing
+                const More(), 
         '/settingpage': (context) => const SettingPage(),
         '/payment': (context) => PaymentScreen(),
         '/invitefriend': (context) => const InviteFriendScreen(),
         '/helpcenter': (context) => const HelpCenterPage(),
       },
     );
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage();
   }
 }
