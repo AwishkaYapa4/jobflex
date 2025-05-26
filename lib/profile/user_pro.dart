@@ -23,7 +23,7 @@ class UserPro extends StatelessWidget {
           ),
                body: Column(
             children: [
-              SizedBox(height: 20),
+              
               Container(
                 height: 650,
                 decoration: BoxDecoration(
