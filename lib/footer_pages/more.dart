@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobflex/models/setting.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/widget/setting_tile.dart';
+import 'package:jobflex/profile/promotor_profile.dart'; // Import the PromotorProfile page
 
 class More extends StatelessWidget {
   const More({super.key});
@@ -22,7 +23,6 @@ class More extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(30),
@@ -30,7 +30,17 @@ class More extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const AvatarCard(),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PromotorProfile(),
+                    ), // Navigate to PromotorProfile
+                  );
+                },
+                child: const AvatarCard(),
+              ),
               const SizedBox(height: 20),
               Column(
                 children: List.generate(
@@ -38,7 +48,7 @@ class More extends StatelessWidget {
                   (index) => Column(
                     children: [
                       SettingTile(setting: settings[index]),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                     ],
                   ),
                 ),
@@ -51,7 +61,7 @@ class More extends StatelessWidget {
                     // Handle sign out logic here
                   },
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Color(0xFF233A66),
+                    foregroundColor: const Color(0xFF233A66),
                   ),
                   child: const Text("Sign Out"),
                 ),
@@ -77,15 +87,15 @@ class AvatarCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(100),
           child: Image.asset('img/supermarket.png', scale: 5),
         ),
-        SizedBox(width: 23),
-        Column(
+        const SizedBox(width: 23),
+        const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "R.S Rusiru",
               style: TextStyle(fontSize: 25, color: Color(0xFF233A66)),
             ),
-            const Text(
+            Text(
               'Your profile',
               style: TextStyle(fontSize: 12, color: Color(0xFF233A66)),
             ),
