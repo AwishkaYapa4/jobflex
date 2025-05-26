@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         '/promotorprofile': (context) => const PromotorProfile(),
         '/useradmin': (context) => const UserAdmin(),
       },*/
-      home: const ChoiceScreen(), // Set ChoiceScreen as the initial page
+      home: const UserPro(), // Set ChoiceScreen as the initial page
     );
   }
 }
