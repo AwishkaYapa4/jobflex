@@ -30,7 +30,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
@@ -44,9 +43,6 @@ class MyApp extends StatelessWidget {
         '/helpcenter': (context) => const HelpCenterPage(),
       },
     );
-=======
-    return MaterialApp(debugShowCheckedModeBanner: false, 
-    home: CategoriesScreen());
->>>>>>> Stashed changes
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
   }
 }
