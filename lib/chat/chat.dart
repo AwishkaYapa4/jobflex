@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/chat/new_chat.dart';
+import 'package:jobflex/chat/chat_search.dart';
 
 class Chat extends StatelessWidget {
   const Chat({super.key});
@@ -94,7 +95,21 @@ class ChatUI extends StatelessWidget {
                     color: Color(0xFF1C2D5E),
                   ),
                 ),
-                Icon(Icons.search, size: 30, color: Color(0xFF1C2D5E)),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ChatSearch(),
+                      ),
+                    );
+                  },
+                  child: const Icon(
+                    Icons.search,
+                    size: 30,
+                    color: Color(0xFF1C2D5E),
+                  ),
+                ),
               ],
             ),
           ),
