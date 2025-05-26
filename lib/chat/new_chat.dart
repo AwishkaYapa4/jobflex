@@ -27,10 +27,18 @@ class NewConversationScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
-                children: const [
-                  Icon(Icons.arrow_back_ios, color: Color(0xFF1C2D5E)),
-                  SizedBox(width: 60),
-                  Text(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Color(0xFF1C2D5E),
+                    ),
+                  ),
+                  const SizedBox(width: 60),
+                  const Text(
                     'New Conversation',
                     style: TextStyle(
                       fontSize: 20,
