@@ -19,7 +19,9 @@ import 'package:jobflex/widget/constants.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/startpages/sign_up.dart';
 import 'package:jobflex/supportive_pages/help_center.dart';
-import 'package:jobflex/models/setting.dart'; 
+import 'package:jobflex/models/setting.dart';
+import 'package:jobflex/widget/setting_tile.dart';
+import 'package:jobflex/widget/footer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,20 +31,27 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-Widget build(BuildContext context) {
-  return MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: const PromotorProfile(),
-    initialRoute: '/',
-    routes: {
-      '/': (context) => const More(), // Set More as the initial page for testing
-      '/settingpage': (context) => const SettingPage(),
-      '/payment': (context) => PaymentScreen(),
-      '/invitefriend': (context) => const InviteFriendScreen(),
-      '/helpcenter': (context) => const HelpCenterPage(),
-    },
-  );
-  
-}
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(), // Set HomePage as the initial page
+        '/more': (context) => const More(),
+        '/settingpage': (context) => const SettingPage(),
+        '/payment': (context) => PaymentScreen(),
+        '/invitefriend': (context) => const InviteFriend(),
+        '/helpcenter': (context) => const HelpCenterPage(),
+        '/chat': (context) => const Chat(),
+        '/chatbox': (context) => const ChatBox(),
+        '/newchat': (context) => const NewChat(),
+        '/chatsearch': (context) => const ChatSearch(),
 
+        '/signup': (context) => const SignUpPage(),
+
+        '/promotorprofile': (context) => const PromotorProfile(),
+        '/useradmin': (context) => const UserAdmin(),
+      },
+    );
+  }
 }
