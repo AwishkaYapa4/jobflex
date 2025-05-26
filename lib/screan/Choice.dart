@@ -44,18 +44,11 @@ class ChoiceScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/jobfle.png', // replace with your logo path
+                    'assets/Logo.png', // replace with your logo path
                     width: 100,
                     height: 100,
                   ),
-                  const Text(
-                    "Jobflex",
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  
                 ],
               ),
             )
