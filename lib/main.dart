@@ -11,6 +11,7 @@ import 'package:jobflex/profile/user_admin.dart';
 import 'package:jobflex/profile/user_pro.dart';
 import 'package:jobflex/screan/Choice.dart';
 import 'package:jobflex/screan/categories.dart';
+import 'package:jobflex/screan/job_event_crew.dart';
 import 'package:jobflex/screan/jobs.dart';
 import 'package:jobflex/screan/loading_page.dart';
 import 'package:jobflex/startpages/loging.dart';
@@ -82,7 +83,7 @@ class MyApp extends StatelessWidget {
         //'/promoadmin': (context) => const PromoAdmin(),
   }*/
       debugShowCheckedModeBanner: false,
-      home: HomePage(), // Set ChoiceScreen as the initial page
+      home: PaymentScreen(), // Set ChoiceScreen as the initial page
     );
   }
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/footer.dart';
 
-class JobEnter extends StatefulWidget {
-  const JobEnter({Key? key}) : super(key: key);
+class JobEventCrew extends StatefulWidget {
+  const JobEventCrew({Key? key}) : super(key: key);
 
   @override
-  State<JobEnter> createState() => _JobEnterState();
+  State<JobEventCrew> createState() => _JobEventCrewState();
 }
 
-class _JobEnterState extends State<JobEnter> {
+class _JobEventCrewState extends State<JobEventCrew> {
   final _formKey = GlobalKey<FormState>();
 
   final TextEditingController jobTitleController = TextEditingController();
@@ -57,14 +57,14 @@ class _JobEnterState extends State<JobEnter> {
                   child: Column(
                     children: [
                       _buildField('Job Title', jobTitleController),
-                      _buildField('Category', categoryController),
+                      
                       _buildField('Skills', skillsController),
                       _buildField('Location', locationController),
                       _buildField('E-mail', emailController),
                       _buildField('Contact', contactController),
                       _buildField('Description', descriptionController, maxLines: 4),
 
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -138,4 +138,3 @@ class _JobEnterState extends State<JobEnter> {
     );
   }
 }
-
