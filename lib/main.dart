@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
   }*/
       
       debugShowCheckedModeBanner: false,
-      home: ChoosePhoto(), // Set ChoiceScreen as the initial page
+      home: JobsScreen(), // Set ChoiceScreen as the initial page
     );
   }
 }
