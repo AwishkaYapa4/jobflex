@@ -42,8 +42,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
-     /* initialRoute: '/',
+      /* initialRoute: '/',
 
 
     return MaterialApp(
@@ -81,7 +80,6 @@ class MyApp extends StatelessWidget {
         '/useradmin': (context) => const UserAdmin(),
         //'/promoadmin': (context) => const PromoAdmin(),
   }*/
-      
       debugShowCheckedModeBanner: false,
       home: JobsScreen(), // Set ChoiceScreen as the initial page
     );
