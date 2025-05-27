@@ -64,30 +64,30 @@ class _FooterState extends State<Footer> {
         // Add navigation logic for other indices (Notifications, More)
       },
 
-      backgroundColor: const Color(0xFF233A66),
-      selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.white,
+      backgroundColor: const  Color(0xFF1F2A44),
+      selectedItemColor:  Color(0xFFECF1FA),
+      unselectedItemColor:  Color(0xFFECF1FA),
       showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.chat_bubble, color: Colors.white),
+          icon: Icon(Icons.chat_bubble, color:  Color(0xFFECF1FA)),
           label: 'Chat',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.work, color: Colors.white),
+          icon: Icon(Icons.work, color:  Color(0xFFECF1FA)),
           label: 'Jobs',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.home, color: Colors.white),
+          icon: Icon(Icons.home, color:  Color(0xFFECF1FA)),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.notifications, color: Colors.white),
+          icon: Icon(Icons.notifications, color:  Color(0xFFECF1FA)),
           label: 'Notifications',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.more_horiz, color: Colors.white),
+          icon: Icon(Icons.more_horiz, color:  Color(0xFFECF1FA)),
           label: 'More',
         ),
       ],

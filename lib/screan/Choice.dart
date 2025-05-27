@@ -21,8 +21,10 @@ class ChoiceScreen extends StatelessWidget {
               ),
             ),
             Row(
+              
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                 
                 _buildRoleOption(
                   icon: Icons.person,
                   label: 'User',
@@ -34,7 +36,7 @@ class ChoiceScreen extends StatelessWidget {
                   },
                 ),
                 _buildRoleOption(
-                  icon: Icons.person_outline,
+                   icon: Icons.person,
                   label: 'Promoter',
                   onTap: () {
                     Navigator.pushNamed(
@@ -51,8 +53,8 @@ class ChoiceScreen extends StatelessWidget {
                 children: [
                   Image.asset(
                     'img/Logopng.png', // replace with your logo path
-                    width: 150,
-                    height: 150,
+                    width: 300,
+                    height: 300,
                   ),
                 ],
               ),
