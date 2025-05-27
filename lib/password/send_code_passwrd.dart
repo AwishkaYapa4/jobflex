@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class SendCodePasswordScreen extends StatefulWidget {
-  const SendCodePasswordScreen({Key? key}) : super(key: key);
+  const SendCodePasswordScreen({super.key});
 
   @override
   State<SendCodePasswordScreen> createState() => _SendCodePasswordScreenState();

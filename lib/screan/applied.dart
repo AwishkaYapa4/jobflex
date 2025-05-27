@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobflex/widget/constants.dart';
 
 class AppliedScreen extends StatelessWidget {
-  const AppliedScreen({Key? key}) : super(key: key);
+  const AppliedScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -22,7 +22,7 @@ class InviteFriendScreen extends StatefulWidget {
 }
 
 class _InviteFriendScreenState extends State<InviteFriendScreen> {
-  int _currentIndex = 0;
+  final int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {

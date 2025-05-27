@@ -3,7 +3,7 @@ import 'package:jobflex/models/setting.dart';
 
 class SettingTile extends StatelessWidget {
   final Setting setting;
-  const SettingTile({Key? key, required this.setting}) : super(key: key);
+  const SettingTile({super.key, required this.setting});
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobflex/chat/chat.dart'; // Import the Chat page
 import 'package:jobflex/screan/home.dart'; // Import the Home page
 import 'package:jobflex/screan/categories.dart';
+import 'package:jobflex/screan/loading_page.dart';
 import 'package:jobflex/supportive_pages/help_center.dart'; // Import the Help Center page
 import 'package:jobflex/footer_pages/more.dart';
 import 'package:jobflex/screan/jobs.dart';
@@ -30,65 +31,69 @@ class _FooterState extends State<Footer> {
           // Navigate to Chat page
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Chat()),
+            MaterialPageRoute(
+              builder: (context) => LoadingPage(nextPage: Chat()),
+            ),
           );
         } else if (index == 1) {
-          // Navigate to Categories page
+          // Navigate to Jobs page via LoadingPage
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Chat(),
-            ), // Replace Chat() with CategoriesPage()
+              builder: (context) => LoadingPage(nextPage: JobsScreen()),
+            ),
           );
         } else if (index == 2) {
-          // Corrected index for Home
           // Navigate to Home page
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const HomePage()),
+            MaterialPageRoute(
+              builder: (context) => LoadingPage(nextPage: HomePage()),
+            ),
           );
         } else if (index == 3) {
-          // Corrected index for Home
-          // Navigate to Home page
+          // Navigate to Help Center page
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const HelpCenterPage()),
+            MaterialPageRoute(
+              builder: (context) => LoadingPage(nextPage: HelpCenterPage()),
+            ),
           );
         } else if (index == 4) {
-          // Corrected index for Home
-          // Navigate to Home page
+          // Navigate to More page
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const More()),
+            MaterialPageRoute(
+              builder: (context) => LoadingPage(nextPage: More()),
+            ),
           );
         }
         // Add navigation logic for other indices (Notifications, More)
       },
-
       backgroundColor: const Color(0xFF233A66),
-      selectedItemColor:  Color(0xFFECF1FA),
-      unselectedItemColor:  Color(0xFFECF1FA),
+      selectedItemColor: const Color(0xFFECF1FA),
+      unselectedItemColor: const Color(0xFFECF1FA),
       showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.chat_bubble, color:  Color(0xFFECF1FA)),
+          icon: Icon(Icons.chat_bubble, color: Color(0xFFECF1FA)),
           label: 'Chat',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.work, color:  Color(0xFFECF1FA)),
+          icon: Icon(Icons.work, color: Color(0xFFECF1FA)),
           label: 'Jobs',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.home, color:  Color(0xFFECF1FA)),
+          icon: Icon(Icons.home, color: Color(0xFFECF1FA)),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.notifications, color:  Color(0xFFECF1FA)),
+          icon: Icon(Icons.notifications, color: Color(0xFFECF1FA)),
           label: 'Notifications',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.more_horiz, color:  Color(0xFFECF1FA)),
+          icon: Icon(Icons.more_horiz, color: Color(0xFFECF1FA)),
           label: 'More',
         ),
       ],

@@ -26,7 +26,7 @@ class ChatListScreen extends StatefulWidget {
 }
 
 class _ChatListScreenState extends State<ChatListScreen> {
-  int _selectedIndex = 0;
+  final int _selectedIndex = 0;
 
   final List<Map<String, dynamic>> chatList = [
     {

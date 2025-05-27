@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UserAdmin extends StatelessWidget {
-  const UserAdmin({Key? key}) : super(key: key);
+  const UserAdmin({super.key});
 
   @override
   Widget build(BuildContext context) {
