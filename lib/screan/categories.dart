@@ -22,10 +22,26 @@ class Job {
   });
 }
 
-class CategoriesScreen extends StatelessWidget {
+class CategoriesScreen extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    final List<Job> eventCrewJobs = [
+  _CategoriesScreenState createState() => _CategoriesScreenState();
+}
+
+class _CategoriesScreenState extends State<CategoriesScreen> {
+  int _selectedIndex = 0;
+
+  // You'll need to create separate lists for closed and saved jobs,
+  // and functions to fetch/populate them.  For now, I'll just reuse
+  // the existing job lists.
+  List<Job> _recentJobs = [];
+  List<Job> _closedJobs = [];
+  List<Job> _savedJobs = [];
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize the recent jobs list (or fetch from a data source)
+    _recentJobs = [
       Job(
         title: 'Event Assistant',
         company: 'SoundWave Events',
@@ -44,39 +60,9 @@ class CategoriesScreen extends StatelessWidget {
         payment: 'Rs. 2,500/night',
         imageUrl: 'https://spotme.com/wp-content/uploads/2020/07/Hero-1.jpg',
       ),
-      Job(
-        title: 'Event Staff',
-        company: 'Prime Events',
-        location: 'Kandy',
-        workingDay: '20 April 2025',
-        time: '7:00 PM - 1:00 AM',
-        payment: 'Rs. 1,800/night',
-        imageUrl: 'https://spotme.com/wp-content/uploads/2020/07/Hero-1.jpg',
-      ),
     ];
 
-    final List<Job> hospitalityJobs = [
-      Job(
-        title: 'Waiter',
-        company: 'Grand Hotel',
-        location: 'Colombo',
-        workingDay: '25 April 2025',
-        time: '6:00 PM - 11:00 PM',
-        payment: 'Rs. 2,200/night',
-        imageUrl: 'https://static.vecteezy.com/system/resources/previews/004/493/181/non_2x/hospital-building-for-healthcare-background-illustration-with-ambulance-car-doctor-patient-nurses-and-medical-clinic-exterior-free-vector.jpg',
-      ),
-      Job(
-        title: 'Bartender',
-        company: 'Ocean View Resort',
-        location: 'Galle',
-        workingDay: '30 April 2025',
-        time: '7:00 PM - 12:00 AM',
-        payment: 'Rs. 2,500/night',
-        imageUrl: 'https://static.vecteezy.com/system/resources/previews/004/493/181/non_2x/hospital-building-for-healthcare-background-illustration-with-ambulance-car-doctor-patient-nurses-and-medical-clinic-exterior-free-vector.jpg',
-      ),
-    ];
-
-    final List<Job> securityJobs = [
+    _closedJobs = [
       Job(
         title: 'Security Guard',
         company: 'Secure Lanka',
@@ -84,18 +70,56 @@ class CategoriesScreen extends StatelessWidget {
         workingDay: '1 May 2025',
         time: '8:00 PM - 6:00 AM',
         payment: 'Rs. 2,000/night',
-        imageUrl: 'https://www.securitymagazine.com/ext/resources/images/security-guards-fp1170x658.jpg',
-      ),
-      Job(
-        title: 'Security Officer',
-        company: 'Vigilant Security',
-        location: 'Kandy',
-        workingDay: '5 May 2025',
-        time: '7:00 PM - 5:00 AM',
-        payment: 'Rs. 2,300/night',
-        imageUrl: 'https://www.securitymagazine.com/ext/resources/images/security-guards-fp1170x658.jpg',
+        imageUrl:
+            'https://www.securitymagazine.com/ext/resources/images/security-guards-fp1170x658.jpg',
       ),
     ];
+
+    _savedJobs = [
+      Job(
+        title: 'Waiter',
+        company: 'Grand Hotel',
+        location: 'Colombo',
+        workingDay: '25 April 2025',
+        time: '6:00 PM - 11:00 PM',
+        payment: 'Rs. 2,200/night',
+        imageUrl:
+            'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg',
+      ),
+    ];
+  }
+
+  Widget _buildJobList(List<Job> jobs) {
+    return ListView.builder(
+      itemCount: jobs.length,
+      itemBuilder: (context, index) {
+        return JobCard(job: jobs[index], key: UniqueKey());
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    List<Job> currentJobs;
+    String title;
+
+    switch (_selectedIndex) {
+      case 0:
+        currentJobs = _recentJobs;
+        title = 'Recent Jobs';
+        break;
+      case 1:
+        currentJobs = _closedJobs;
+        title = 'Closed Jobs';
+        break;
+      case 2:
+        currentJobs = _savedJobs;
+        title = 'Saved Jobs';
+        break;
+      default:
+        currentJobs = _recentJobs;
+        title = 'Recent Jobs';
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -106,44 +130,29 @@ class CategoriesScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: Text('Categories', style: TextStyle(color: Colors.black)),
+        title: Text(title, style: TextStyle(color: Colors.black)),
         centerTitle: true,
       ),
       body: Container(
         color: Color(0xFFE8EAF6),
-        child: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'Event Crew',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-            ...eventCrewJobs.map((job) => JobCard(job: job, key: UniqueKey())),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'Hospitality',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-            ...hospitalityJobs.map(
-              (job) => JobCard(job: job, key: UniqueKey()),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'Security',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-            ...securityJobs.map((job) => JobCard(job: job, key: UniqueKey())),
-          ],
-        ),
+        child: _buildJobList(currentJobs),
       ),
       backgroundColor: const Color.fromRGBO(30, 50, 92, 1),
-      bottomNavigationBar: const Footer(),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.history), label: 'Recent'),
+          BottomNavigationBarItem(icon: Icon(Icons.lock), label: 'Closed'),
+          BottomNavigationBarItem(icon: Icon(Icons.save), label: 'Saved'),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue[800],
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+      ),
+      //bottomNavigationBar: const Footer(),
     );
   }
 }
