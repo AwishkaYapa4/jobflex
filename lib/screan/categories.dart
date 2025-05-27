@@ -1,12 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:jobflex/screan/home.dart';
-import 'package:jobflex/widget/footer.dart'; // Import the home screen
+import 'package:jobflex/widget/footer.dart';
+import 'home.dart';
+
+
+class Job {
+  final String title;
+  final String company;
+  final String location;
+  final String workingDay;
+  final String time;
+  final String payment;
+  final String imageUrl;
+
+
+  Job({
+    required this.title,
+    required this.company,
+    required this.location,
+    required this.workingDay,
+    required this.time,
+    required this.payment,
+    required this.imageUrl,
+  });
+}
 
 class CategoriesScreen extends StatefulWidget {
   @override
-
-  Widget build(BuildContext context) {
   _CategoriesScreenState createState() => _CategoriesScreenState();
 }
 
@@ -58,6 +77,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       ),
     ];
 
+
+
     _savedJobs = [
       Job(
         title: 'Waiter',
@@ -104,7 +125,6 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         title = 'Recent Jobs';
     }
 
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -118,43 +138,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         centerTitle: true,
       ),
       body: Container(
-        color: Color(0xFFE8EAF6), // Approximate background color
-        child: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'Event Crew',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-            JobCard(),
-            JobCard(),
-            JobCard(),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'Hospitality',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-            JobCard(),
-            JobCard(),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'Security',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-            JobCard(),
-            JobCard(),
-          ],
-        ),
-
         color: Color(0xFFE8EAF6),
         child: _buildJobList(currentJobs),
-
       ),
       backgroundColor: const Color.fromRGBO(30, 50, 92, 1),
       bottomNavigationBar: BottomNavigationBar(
@@ -177,6 +162,10 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 }
 
 class JobCard extends StatelessWidget {
+  final Job job;
+
+  const JobCard({Key? key, required this.job}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -198,9 +187,7 @@ class JobCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                      image: NetworkImage(
-                        'https://via.placeholder.com/100',
-                      ), // Replace with your image URL
+                      image: NetworkImage(job.imageUrl),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -211,14 +198,14 @@ class JobCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Job Title: Event Assistant',
+                        'Job Title: ${job.title}',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Text('Company: SoundWave Events'),
-                      Text('Location: Negombo'),
-                      Text('Working Day: 10 April 2025'),
-                      Text('Time: 5:00 PM - 11:00 PM'),
-                      Text('Payment: Rs. 2,000/night'),
+                      Text('Company: ${job.company}'),
+                      Text('Location: ${job.location}'),
+                      Text('Working Day: ${job.workingDay}'),
+                      Text('Time: ${job.time}'),
+                      Text('Payment: ${job.payment}'),
                     ],
                   ),
                 ),
