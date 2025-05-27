@@ -12,6 +12,7 @@ class Job {
   final String payment;
   final String imageUrl;
 
+
   Job({
     required this.title,
     required this.company,
