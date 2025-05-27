@@ -39,9 +39,23 @@ class UserPro extends StatelessWidget {
       Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatar(
-            radius: 40,
-            backgroundImage: AssetImage('img/supermarket.png'), // Replace with your image
+          Stack(
+            alignment: Alignment.bottomRight,
+            children: [
+              CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('img/User.jpg'), // Replace with your image
+              ),
+              const CircleAvatar(
+                radius: 15,
+                backgroundColor: Color(0xFFECF1FA),
+                child: Icon(
+                  Icons.edit,
+                  size: 18,
+                  color: Color(0xFF233A66),
+                ),
+              ),
+            ],
           ),
           SizedBox(width: 16),
           Column(
@@ -61,7 +75,7 @@ class UserPro extends StatelessWidget {
           )
         ],
       ),
-      SizedBox(height: 20),
+      SizedBox(height: 60),
       // Full Name
               Text('Full Name', style: TextStyle(color: Color(0xFF2D4C82))),
               Text('Regawan sudarshan Rusiru',
