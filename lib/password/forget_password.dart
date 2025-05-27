@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/footer.dart';
 
-class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+class ForgetPassword extends StatelessWidget {
+  const ForgetPassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

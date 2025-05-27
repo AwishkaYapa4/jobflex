@@ -22,7 +22,7 @@ class PromotorProfile extends StatelessWidget {
         children: [
         SizedBox(width: 16),
           Container(
-            height: 650,
+            height: 660,
             decoration: BoxDecoration(
               color: Color(0xFFECF1FA),
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
@@ -121,7 +121,7 @@ class PromotorProfile extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: Color(0xFFECF1FA),
+      backgroundColor: Color(0xFF233A66),
       bottomNavigationBar: const Footer(),
     );
   }
