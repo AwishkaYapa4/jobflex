@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/widget/constants.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'categories.dart'; // Import the categories.dart file
 
@@ -233,8 +234,8 @@ class JobCard extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF232C91),
-                    foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                    backgroundColor: JPrimaryColor,
+                    foregroundColor: JPrimaryLightColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -245,8 +246,8 @@ class JobCard extends StatelessWidget {
                 OutlinedButton(
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
-                    backgroundColor: const Color(0xFF232C91),
-                    foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                    backgroundColor:JPrimaryColor,
+                    foregroundColor: JPrimaryLightColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
