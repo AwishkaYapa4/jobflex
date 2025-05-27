@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'home.dart';
 
+
 class Job {
   final String title;
   final String company;
@@ -74,6 +75,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             'https://www.securitymagazine.com/ext/resources/images/security-guards-fp1170x658.jpg',
       ),
     ];
+
+
 
     _savedJobs = [
       Job(
