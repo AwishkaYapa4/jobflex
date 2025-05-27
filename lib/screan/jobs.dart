@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:jobflex/widget/footer.dart';
 
 class JobsScreen extends StatelessWidget {
+  const JobsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -235,7 +237,7 @@ class JobCard extends StatelessWidget {
   final String imageUrl;
 
   const JobCard({
-    Key? key,
+    super.key,
     required this.jobTitle,
     required this.company,
     required this.location,
@@ -243,7 +245,7 @@ class JobCard extends StatelessWidget {
     required this.time,
     required this.payment,
     required this.imageUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

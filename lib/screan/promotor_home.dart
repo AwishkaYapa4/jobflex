@@ -3,7 +3,7 @@ import 'package:jobflex/footer_pages/more.dart';
 import 'package:jobflex/widget/footer.dart';
 
 class PromotorHomePage extends StatelessWidget {
-  const PromotorHomePage({Key? key}) : super(key: key);
+  const PromotorHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -108,8 +108,7 @@ class PromotorHomePage extends StatelessWidget {
 }
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({Key? key, required this.image, required this.title})
-    : super(key: key);
+  const CategoryCard({super.key, required this.image, required this.title});
 
   final String image;
   final String title;

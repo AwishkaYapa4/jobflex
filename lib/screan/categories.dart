@@ -25,6 +25,8 @@ class Job {
 }
 
 class CategoriesScreen extends StatefulWidget {
+  const CategoriesScreen({super.key});
+
   @override
   _CategoriesScreenState createState() => _CategoriesScreenState();
 }
@@ -164,7 +166,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 class JobCard extends StatelessWidget {
   final Job job;
 
-  const JobCard({Key? key, required this.job}) : super(key: key);
+  const JobCard({super.key, required this.job});
 
   @override
   Widget build(BuildContext context) {

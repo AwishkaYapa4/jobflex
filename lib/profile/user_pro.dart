@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/footer.dart';
-import 'package:jobflex/widget/constants.dart';
 
 
 

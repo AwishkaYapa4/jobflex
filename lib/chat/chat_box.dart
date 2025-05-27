@@ -22,7 +22,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  int _currentIndex = 0;
+  final int _currentIndex = 0;
 
   final List<Map<String, dynamic>> messages = [
     {"text": "Hi!", "isSender": false},

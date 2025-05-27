@@ -20,7 +20,7 @@ class UserAdminScreen extends StatelessWidget {
 
 // Move UserAdmin to top-level (outside of UserAdminScreen)
 class UserAdmin extends StatelessWidget {
-  const UserAdmin({Key? key}) : super(key: key);
+  const UserAdmin({super.key});
 
   // Example user data
   static const List<Map<String, String>> userData = [

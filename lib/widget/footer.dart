@@ -7,7 +7,7 @@ import 'package:jobflex/footer_pages/more.dart';
 import 'package:jobflex/screan/jobs.dart';
 
 class Footer extends StatefulWidget {
-  const Footer({Key? key}) : super(key: key);
+  const Footer({super.key});
 
   @override
   State<Footer> createState() => _FooterState();
