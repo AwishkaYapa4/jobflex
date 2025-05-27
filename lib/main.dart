@@ -28,6 +28,7 @@ import 'package:jobflex/supportive_pages/help_center.dart';
 import 'package:jobflex/models/setting.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/password/forget_password.dart';
+import 'package:jobflex/screan/job_enter.dart';
 
 void main() {
   runApp(const MyApp());
