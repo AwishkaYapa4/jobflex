@@ -22,7 +22,6 @@ import 'package:jobflex/startpages/sign_up.dart';
 import 'package:jobflex/supportive_pages/help_center.dart';
 import 'package:jobflex/models/setting.dart';
 import 'package:jobflex/widget/setting_tile.dart';
-import 'package:jobflex/screan/Choice.dart';
 import 'package:jobflex/startpages/sign_up.dart';
 import 'package:jobflex/supportive_pages/help_center.dart';
 import 'package:jobflex/models/setting.dart';
@@ -32,6 +31,7 @@ import 'package:jobflex/screan/job_enter.dart';
 import 'package:jobflex/profile/choose_photo.dart';
 import 'package:jobflex/profile/edit_profile_2.dart';
 import 'package:jobflex/profile/edit_profle.dart';
+import 'package:jobflex/password/send_code_passwrd.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
   }*/
       
       debugShowCheckedModeBanner: false,
-      home: JobEnterPage(), // Set ChoiceScreen as the initial page
+      home: ChoosePhoto(), // Set ChoiceScreen as the initial page
     );
   }
 }

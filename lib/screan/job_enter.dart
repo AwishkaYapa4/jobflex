@@ -46,7 +46,7 @@ class _JobEnterPageState extends State<JobEnterPage> {
                 ],
               ),
             ),
-
+              SizedBox(height: 30),
             // Form
             Expanded(
               child: SingleChildScrollView(
