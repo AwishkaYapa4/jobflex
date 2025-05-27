@@ -92,11 +92,11 @@ class AvatarCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "R.S Rusiru",
+              "Mr.Nadeemal",
               style: TextStyle(fontSize: 25, color: Color(0xFF233A66)),
             ),
             Text(
-              'Your profile',
+              'I am superman',
               style: TextStyle(fontSize: 12, color: Color(0xFF233A66)),
             ),
           ],
