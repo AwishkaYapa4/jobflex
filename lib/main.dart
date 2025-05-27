@@ -29,7 +29,9 @@ import 'package:jobflex/models/setting.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/password/forget_password.dart';
 import 'package:jobflex/screan/job_enter.dart';
-
+import 'package:jobflex/profile/choose_photo.dart';
+import 'package:jobflex/profile/edit_profile_2.dart';
+import 'package:jobflex/profile/edit_profle.dart';
 void main() {
   runApp(const MyApp());
 }
