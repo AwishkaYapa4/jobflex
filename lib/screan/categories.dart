@@ -3,9 +3,109 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jobflex/screan/home.dart';
 import 'package:jobflex/widget/footer.dart'; // Import the home screen
 
-class CategoriesScreen extends StatelessWidget {
+class CategoriesScreen extends StatefulWidget {
+  @override
+<<<<<<< HEAD
+  Widget build(BuildContext context) {
+=======
+  _CategoriesScreenState createState() => _CategoriesScreenState();
+}
+
+class _CategoriesScreenState extends State<CategoriesScreen> {
+  int _selectedIndex = 0;
+
+  // You'll need to create separate lists for closed and saved jobs,
+  // and functions to fetch/populate them.  For now, I'll just reuse
+  // the existing job lists.
+  List<Job> _recentJobs = [];
+  List<Job> _closedJobs = [];
+  List<Job> _savedJobs = [];
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize the recent jobs list (or fetch from a data source)
+    _recentJobs = [
+      Job(
+        title: 'Event Assistant',
+        company: 'SoundWave Events',
+        location: 'Negombo',
+        workingDay: '10 April 2025',
+        time: '5:00 PM - 11:00 PM',
+        payment: 'Rs. 2,000/night',
+        imageUrl: 'https://spotme.com/wp-content/uploads/2020/07/Hero-1.jpg',
+      ),
+      Job(
+        title: 'Event Coordinator',
+        company: 'City Events',
+        location: 'Colombo',
+        workingDay: '15 April 2025',
+        time: '6:00 PM - 12:00 AM',
+        payment: 'Rs. 2,500/night',
+        imageUrl: 'https://spotme.com/wp-content/uploads/2020/07/Hero-1.jpg',
+      ),
+    ];
+
+    _closedJobs = [
+      Job(
+        title: 'Security Guard',
+        company: 'Secure Lanka',
+        location: 'Colombo',
+        workingDay: '1 May 2025',
+        time: '8:00 PM - 6:00 AM',
+        payment: 'Rs. 2,000/night',
+        imageUrl:
+            'https://www.securitymagazine.com/ext/resources/images/security-guards-fp1170x658.jpg',
+      ),
+    ];
+
+    _savedJobs = [
+      Job(
+        title: 'Waiter',
+        company: 'Grand Hotel',
+        location: 'Colombo',
+        workingDay: '25 April 2025',
+        time: '6:00 PM - 11:00 PM',
+        payment: 'Rs. 2,200/night',
+        imageUrl:
+            'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg',
+      ),
+    ];
+  }
+
+  Widget _buildJobList(List<Job> jobs) {
+    return ListView.builder(
+      itemCount: jobs.length,
+      itemBuilder: (context, index) {
+        return JobCard(job: jobs[index], key: UniqueKey());
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    List<Job> currentJobs;
+    String title;
+
+    switch (_selectedIndex) {
+      case 0:
+        currentJobs = _recentJobs;
+        title = 'Recent Jobs';
+        break;
+      case 1:
+        currentJobs = _closedJobs;
+        title = 'Closed Jobs';
+        break;
+      case 2:
+        currentJobs = _savedJobs;
+        title = 'Saved Jobs';
+        break;
+      default:
+        currentJobs = _recentJobs;
+        title = 'Recent Jobs';
+    }
+
+>>>>>>> ba38d39380e1c3ef57f9e02793646633d474eb56
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -15,10 +115,11 @@ class CategoriesScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: Text('Categories', style: TextStyle(color: Colors.black)),
+        title: Text(title, style: TextStyle(color: Colors.black)),
         centerTitle: true,
       ),
       body: Container(
+<<<<<<< HEAD
         color: Color(0xFFE8EAF6), // Approximate background color
         child: ListView(
           children: [
@@ -52,9 +153,27 @@ class CategoriesScreen extends StatelessWidget {
             JobCard(),
           ],
         ),
+=======
+        color: Color(0xFFE8EAF6),
+        child: _buildJobList(currentJobs),
+>>>>>>> ba38d39380e1c3ef57f9e02793646633d474eb56
       ),
       backgroundColor: const Color.fromRGBO(30, 50, 92, 1),
-      bottomNavigationBar: const Footer(),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.history), label: 'Recent'),
+          BottomNavigationBarItem(icon: Icon(Icons.lock), label: 'Closed'),
+          BottomNavigationBarItem(icon: Icon(Icons.save), label: 'Saved'),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue[800],
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+      ),
+      //bottomNavigationBar: const Footer(),
     );
   }
 }

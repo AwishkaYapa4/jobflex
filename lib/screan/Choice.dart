@@ -27,14 +27,20 @@ class ChoiceScreen extends StatelessWidget {
                   icon: Icons.person,
                   label: 'User',
                   onTap: () {
-                    Navigator.pushNamed(context, '/user'); // Set route accordingly
+                    Navigator.pushNamed(
+                      context,
+                      '/user',
+                    ); // Set route accordingly
                   },
                 ),
                 _buildRoleOption(
                   icon: Icons.person_outline,
                   label: 'Promoter',
                   onTap: () {
-                    Navigator.pushNamed(context, '/promoter'); // Set route accordingly
+                    Navigator.pushNamed(
+                      context,
+                      '/promoter',
+                    ); // Set route accordingly
                   },
                 ),
               ],
@@ -44,14 +50,13 @@ class ChoiceScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/Logo.png', // replace with your logo path
-                    width: 100,
-                    height: 100,
+                    'img/Logopng.png', // replace with your logo path
+                    width: 150,
+                    height: 150,
                   ),
-                  
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -76,7 +81,7 @@ class ChoiceScreen extends StatelessWidget {
           Text(
             label,
             style: const TextStyle(color: Colors.white, fontSize: 16),
-          )
+          ),
         ],
       ),
     );
