@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/footer.dart';
+import 'categories.dart'; // Import the categories.dart file
 
 class JobsScreen extends StatelessWidget {
-  const JobsScreen({super.key});
+  const JobsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,17 @@ class JobsScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.more_vert),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CategoriesScreen()),
+              );
+            },
+          ),
+        ],
       ),
       body: ListView(
         children: const [
@@ -51,26 +63,6 @@ class JobsScreen extends StatelessWidget {
                 'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
           ),
           JobCard(
-            jobTitle: 'Restaurant Waiter',
-            company: 'Spice Route Restaurant',
-            location: 'Colombo',
-            workingDay: '25 April 2025',
-            time: '6:00 PM - 11:00 PM',
-            payment: 'Rs. 1,800/night',
-            imageUrl:
-                'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
-          ),
-          JobCard(
-            jobTitle: 'Hotel Receptionist',
-            company: 'Luxury Stay Hotels',
-            location: 'Kandy',
-            workingDay: '28 April 2025',
-            time: '9:00 AM - 5:00 PM',
-            payment: 'Rs. 2,200/day',
-            imageUrl:
-                'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
-          ),
-          JobCard(
             jobTitle: 'Security Guard',
             company: 'Secure Zone Security',
             location: 'Galle',
@@ -97,16 +89,6 @@ class JobsScreen extends StatelessWidget {
             workingDay: '8 May 2025',
             time: '2:00 PM - 9:00 PM',
             payment: 'Rs. 1,600/day',
-            imageUrl:
-                'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
-          ),
-          JobCard(
-            jobTitle: 'Kitchen Helper',
-            company: 'Tasty Bites Restaurant',
-            location: 'Matara',
-            workingDay: '12 May 2025',
-            time: '11:00 AM - 4:00 PM',
-            payment: 'Rs. 1,400/day',
             imageUrl:
                 'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
           ),
@@ -141,72 +123,12 @@ class JobsScreen extends StatelessWidget {
                 'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
           ),
           JobCard(
-            jobTitle: 'Data Entry Clerk',
-            company: 'Efficient Data Solutions',
-            location: 'Colombo',
-            workingDay: '24 May 2025',
-            time: '9:00 AM - 5:00 PM',
-            payment: 'Rs. 2,100/day',
-            imageUrl:
-                'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
-          ),
-          JobCard(
             jobTitle: 'Customer Service Representative',
             company: 'HelpLine Customer Care',
             location: 'Nugegoda',
             workingDay: '27 May 2025',
             time: '10:00 AM - 6:00 PM',
             payment: 'Rs. 2,400/day',
-            imageUrl:
-                'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
-          ),
-          JobCard(
-            jobTitle: 'Sales Assistant',
-            company: 'TrendSetters Fashion Store',
-            location: 'Matara',
-            workingDay: '30 May 2025',
-            time: '11:00 AM - 7:00 PM',
-            payment: 'Rs. 1,900/day',
-            imageUrl:
-                'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
-          ),
-          JobCard(
-            jobTitle: 'Cleaner',
-            company: 'Sparkling Clean Services',
-            location: 'Colombo',
-            workingDay: '2 June 2025',
-            time: '7:00 AM - 2:00 PM',
-            payment: 'Rs. 1,300/day',
-            imageUrl:
-                'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
-          ),
-          JobCard(
-            jobTitle: 'Gardener',
-            company: 'Green Thumb Landscaping',
-            location: 'Kandy',
-            workingDay: '5 June 2025',
-            time: '8:00 AM - 1:00 PM',
-            payment: 'Rs. 1,600/day',
-            imageUrl:
-                'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
-          ),
-          JobCard(
-            jobTitle: 'Tutor',
-            company: 'Smart Start Tutoring',
-            location: 'Galle',
-            workingDay: '8 June 2025',
-            time: '3:00 PM - 6:00 PM',
-            payment: 'Rs. 2,500/day',
-            imageUrl:
-                'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
-          ),
-          JobCard(
-            jobTitle: 'Caregiver',
-            company: 'Loving Hearts Care',
-            location: 'Colombo',
-            workingDay: '11 June 2025',
-            time: '9:00 AM - 4:00 PM',
-            payment: 'Rs. 2,000/day',
             imageUrl:
                 'https://cdn3.careeraddict.com/uploads/article/58649/illustration-hotel-reception.jpg', // Hospitality
           ),
@@ -222,7 +144,7 @@ class JobsScreen extends StatelessWidget {
           ),
         ],
       ),
-    bottomNavigationBar: const Footer(),  
+      bottomNavigationBar: const Footer(),
     );
   }
 }
@@ -237,7 +159,7 @@ class JobCard extends StatelessWidget {
   final String imageUrl;
 
   const JobCard({
-    super.key,
+    Key? key,
     required this.jobTitle,
     required this.company,
     required this.location,
@@ -245,7 +167,7 @@ class JobCard extends StatelessWidget {
     required this.time,
     required this.payment,
     required this.imageUrl,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

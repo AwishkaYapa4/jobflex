@@ -36,8 +36,7 @@ class _FooterState extends State<Footer> {
           // Navigate to Categories page
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) => const Chat(),
+            MaterialPageRoute(builder: (context) => const JobsScreen(),
             ), // Replace Chat() with CategoriesPage()
           );
         } else if (index == 2) {
