@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/chat/chat.dart';
 
-class PromoAdmin extends StatelessWidget {
-  const PromoAdmin({Key? key}) : super(key: key);
+class ChatAdmin extends StatelessWidget {
+  const ChatAdmin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class PromoAdmin extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: const Text(
-          "Job Manage / admin",
+          "Chat Admin",
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -40,11 +41,11 @@ class PromoAdmin extends StatelessWidget {
                   TableRow(
                     children: [
                       TableCell(child: Center(child: Text('ID'))),
-                      TableCell(child: Center(child: Text('Job title'))),
-                      TableCell(child: Center(child: Text('Email'))),
-                      TableCell(child: Center(child: Text('Category'))),
-                      TableCell(child: Center(child: Text('Edit'))),
-                      TableCell(child: Center(child: Text('Delete'))),
+                      TableCell(child: Center(child: Text('Message'))),
+                      TableCell(child: Center(child: Text('Attched Doc'))),
+                      TableCell(child: Center(child: Text('Reply'))),
+                      TableCell(child: Center(child: Text(''))),
+                      TableCell(child: Center(child: Text(''))),
                     ],
                   ),
                   TableRow(
