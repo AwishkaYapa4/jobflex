@@ -13,8 +13,8 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
-    // Simulate a 3-second loading delay
-    Future.delayed(const Duration(seconds: 2), () {
+    // Simulate a 1-second loading delay
+    Future.delayed(const Duration(seconds: 1), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => widget.nextPage),

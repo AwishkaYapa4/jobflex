@@ -31,32 +31,41 @@ class _FooterState extends State<Footer> {
           // Navigate to Chat page
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Chat()),
+            MaterialPageRoute(
+              builder: (context) => LoadingPage(nextPage: Chat()),
+            ),
           );
         } else if (index == 1) {
           // Navigate to Jobs page via LoadingPage
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => LoadingPage(nextPage: JobsScreen()),
+            MaterialPageRoute(
+              builder: (context) => LoadingPage(nextPage: JobsScreen()),
             ),
           );
         } else if (index == 2) {
           // Navigate to Home page
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const HomePage()),
+            MaterialPageRoute(
+              builder: (context) => LoadingPage(nextPage: HomePage()),
+            ),
           );
         } else if (index == 3) {
           // Navigate to Help Center page
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const HelpCenterPage()),
+            MaterialPageRoute(
+              builder: (context) => LoadingPage(nextPage: HelpCenterPage()),
+            ),
           );
         } else if (index == 4) {
           // Navigate to More page
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const More()),
+            MaterialPageRoute(
+              builder: (context) => LoadingPage(nextPage: More()),
+            ),
           );
         }
         // Add navigation logic for other indices (Notifications, More)
