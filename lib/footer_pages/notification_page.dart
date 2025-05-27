@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+//import 'package:intl/intl.dart';
 
 class NotificationModel {
   final IconData icon;
@@ -87,7 +87,7 @@ class _NotificationPageState extends State<NotificationPage>
     final difference = now.difference(time);
 
     if (difference.inDays > 7) {
-      return DateFormat('dd MMM').format(time);
+      return 'Now';
     } else if (difference.inDays > 0) {
       return '${difference.inDays}d ago';
     } else if (difference.inHours > 0) {
@@ -133,12 +133,16 @@ class _NotificationPageState extends State<NotificationPage>
                   // App bar
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 10),
+                      horizontal: 20,
+                      vertical: 10,
+                    ),
                     child: Row(
                       children: [
                         IconButton(
-                          icon: const Icon(Icons.arrow_back_ios,
-                              color: Color(0xFF233A66)),
+                          icon: const Icon(
+                            Icons.arrow_back_ios,
+                            color: Color(0xFF233A66),
+                          ),
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
@@ -181,24 +185,26 @@ class _NotificationPageState extends State<NotificationPage>
                             // Handle menu selection
                             if (value == 'mark_all_read') {
                               setState(() {
-                                for (var i = 0;
-                                    i < _allNotifications.length;
-                                    i++) {
-                                  final notification = _allNotifications[i];
-                                  _allNotifications[i] = NotificationModel(
-                                    icon: notification.icon,
-                                    title: notification.title,
-                                    subtitle: notification.subtitle,
-                                    highlight: notification.highlight,
-                                    time: notification.time,
-                                    isRead: true,
-                                  );
-                                }
+                                // Create a new list with all notifications marked as read
+                                _allNotifications.clear();
+                                _allNotifications.addAll(
+                                  _allNotifications.map(
+                                    (notification) => NotificationModel(
+                                      icon: notification.icon,
+                                      title: notification.title,
+                                      subtitle: notification.subtitle,
+                                      highlight: notification.highlight,
+                                      time: notification.time,
+                                      isRead: true,
+                                    ),
+                                  ),
+                                );
                               });
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  content:
-                                      Text('All notifications marked as read'),
+                                  content: Text(
+                                    'All notifications marked as read',
+                                  ),
                                   duration: Duration(seconds: 2),
                                 ),
                               );
@@ -206,16 +212,17 @@ class _NotificationPageState extends State<NotificationPage>
                               // Navigate to notification settings
                             }
                           },
-                          itemBuilder: (context) => [
-                            const PopupMenuItem(
-                              value: 'mark_all_read',
-                              child: Text('Mark all as read'),
-                            ),
-                            const PopupMenuItem(
-                              value: 'settings',
-                              child: Text('Notification settings'),
-                            ),
-                          ],
+                          itemBuilder:
+                              (context) => [
+                                const PopupMenuItem(
+                                  value: 'mark_all_read',
+                                  child: Text('Mark all as read'),
+                                ),
+                                const PopupMenuItem(
+                                  value: 'settings',
+                                  child: Text('Notification settings'),
+                                ),
+                              ],
                         ),
                       ],
                     ),
@@ -224,7 +231,9 @@ class _NotificationPageState extends State<NotificationPage>
                   // Tab Bar
                   Container(
                     margin: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 16),
+                      horizontal: 20,
+                      vertical: 16,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30),
@@ -239,10 +248,7 @@ class _NotificationPageState extends State<NotificationPage>
                     child: TabBar(
                       controller: _tabController,
                       labelColor: const Color.fromARGB(255, 28, 10, 185),
-                      tabs: const [
-                        Tab(text: 'All'),
-                        Tab(text: 'Unread'),
-                      ],
+                      tabs: const [Tab(text: 'All'), Tab(text: 'Unread')],
                     ),
                   ),
 
@@ -277,11 +283,7 @@ class _NotificationPageState extends State<NotificationPage>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.notifications_off,
-              size: 80,
-              color: Colors.grey[400],
-            ),
+            Icon(Icons.notifications_off, size: 80, color: Colors.grey[400]),
             const SizedBox(height: 16),
             Text(
               'No notifications',
@@ -294,10 +296,7 @@ class _NotificationPageState extends State<NotificationPage>
             const SizedBox(height: 8),
             Text(
               'You\'re all caught up!',
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey[600],
-              ),
+              style: TextStyle(fontSize: 14, color: Colors.grey[600]),
             ),
           ],
         ),
@@ -332,10 +331,7 @@ class _NotificationPageState extends State<NotificationPage>
                   color: Colors.red,
                   alignment: Alignment.centerRight,
                   padding: const EdgeInsets.only(right: 20.0),
-                  child: const Icon(
-                    Icons.delete,
-                    color: Colors.white,
-                  ),
+                  child: const Icon(Icons.delete, color: Colors.white),
                 ),
                 direction: DismissDirection.endToStart,
                 onDismissed: (direction) {
@@ -380,22 +376,26 @@ class _NotificationPageState extends State<NotificationPage>
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                            'Opening: ${notification.title}${notification.highlight ?? ''}'),
+                          'Opening: ${notification.title}${notification.highlight ?? ''}',
+                        ),
                         duration: const Duration(seconds: 1),
                       ),
                     );
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      color: notification.isRead
-                          ? Colors.white
-                          : const Color(0xFFEDF5FF),
+                      color:
+                          notification.isRead
+                              ? Colors.white
+                              : const Color(0xFFEDF5FF),
                       border: Border(
                         bottom: BorderSide(color: Colors.grey[200]!, width: 1),
                       ),
                     ),
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 12),
+                      horizontal: 16,
+                      vertical: 12,
+                    ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -403,16 +403,18 @@ class _NotificationPageState extends State<NotificationPage>
                           width: 40,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: notification.isRead
-                                ? const Color(0xFFEEF2F8)
-                                : const Color(0xFF233A66).withOpacity(0.8),
+                            color:
+                                notification.isRead
+                                    ? const Color(0xFFEEF2F8)
+                                    : const Color(0xFF233A66).withOpacity(0.8),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Icon(
                             notification.icon,
-                            color: notification.isRead
-                                ? const Color(0xFF233A66)
-                                : Colors.white,
+                            color:
+                                notification.isRead
+                                    ? const Color(0xFF233A66)
+                                    : Colors.white,
                             size: 20,
                           ),
                         ),
@@ -431,9 +433,10 @@ class _NotificationPageState extends State<NotificationPage>
                                         style: TextStyle(
                                           fontSize: 15,
                                           color: const Color(0xFF233A66),
-                                          fontWeight: notification.isRead
-                                              ? FontWeight.normal
-                                              : FontWeight.bold,
+                                          fontWeight:
+                                              notification.isRead
+                                                  ? FontWeight.normal
+                                                  : FontWeight.bold,
                                         ),
                                         children: [
                                           TextSpan(text: notification.title),
