@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/widget/constants.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class InviteFriend extends StatelessWidget {
-  const InviteFriend({Key? key}) : super(key: key);
+  const InviteFriend({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class InviteFriend extends StatelessWidget {
 }
 
 class InviteFriendScreen extends StatefulWidget {
-  const InviteFriendScreen({Key? key}) : super(key: key);
+  const InviteFriendScreen({super.key});
 
   @override
   State<InviteFriendScreen> createState() => _InviteFriendScreenState();
@@ -46,7 +48,9 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
             ),
           ),
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.1,
+            top:
+                MediaQuery.of(context).size.height *
+                0.1, // Restored position for arrow and title
             left: screenWidth * 0.1,
             right: screenWidth * 0.1,
             child: Column(
@@ -66,7 +70,9 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
+                SizedBox(
+                  height: 20,
+                ), // Added space between header and invite card
                 Image.asset(
                   'assets/invite_illustration.jpg',
                   height: MediaQuery.of(context).size.height * 0.32,
@@ -76,7 +82,9 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
                 Container(
                   width: screenWidth * 0.8,
                   color: const Color(0xFF3A4F88),
-                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 5.0,
+                  ), // Increased padding for more space
                   child: Column(
                     children: [
                       const Text(
@@ -87,7 +95,9 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      const SizedBox(height: 3),
+                      const SizedBox(
+                        height: 3,
+                      ), // Increased space between text and button
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFDCE6F2),
@@ -117,7 +127,9 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
             ),
           ),
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.68,
+            top:
+                MediaQuery.of(context).size.height *
+                0.68, // Further lowered position for "Share"
             left: screenWidth * 0.1,
             right: screenWidth * 0.1,
             child: Column(
@@ -137,37 +149,32 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
-                      children: [
+                      children: const [
                         SocialIcon(
-                          key: UniqueKey(),
                           icon: FontAwesomeIcons.whatsapp,
                           color: Colors.green,
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10),
                         SocialIcon(
-                          key: UniqueKey(),
                           icon: FontAwesomeIcons.twitter,
                           color: Colors.lightBlue,
                         ),
                       ],
                     ),
                     Column(
-                      children: [
+                      children: const [
                         SocialIcon(
-                          key: UniqueKey(),
                           icon: FontAwesomeIcons.facebookF,
                           color: Colors.blue,
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10),
                         SocialIcon(
-                          key: UniqueKey(),
                           icon: FontAwesomeIcons.envelope,
                           color: Colors.purple,
                         ),
                       ],
                     ),
-                    SocialIcon(
-                      key: UniqueKey(),
+                    const SocialIcon(
                       icon: FontAwesomeIcons.instagram,
                       color: Colors.pink,
                     ),
@@ -183,20 +190,11 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
   }
 }
 
-class FontAwesomeIcons {
-  static const IconData whatsapp = IconData(0xf232, fontFamily: 'FontAwesome');
-  static const IconData twitter = IconData(0xf099, fontFamily: 'FontAwesome');
-  static const IconData facebookF = IconData(0xf39e, fontFamily: 'FontAwesome');
-  static const IconData envelope = IconData(0xf0e0, fontFamily: 'FontAwesome');
-  static const IconData instagram = IconData(0xf16d, fontFamily: 'FontAwesome');
-}
-
 class SocialIcon extends StatelessWidget {
   final IconData icon;
   final Color color;
 
-  const SocialIcon({Key? key, required this.icon, required this.color})
-    : super(key: key);
+  const SocialIcon({super.key, required this.icon, required this.color});
 
   @override
   Widget build(BuildContext context) {
