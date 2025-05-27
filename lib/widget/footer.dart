@@ -64,7 +64,7 @@ class _FooterState extends State<Footer> {
         // Add navigation logic for other indices (Notifications, More)
       },
 
-      backgroundColor: const  Color(0xFF1F2A44),
+      backgroundColor: const Color(0xFF233A66),
       selectedItemColor:  Color(0xFFECF1FA),
       unselectedItemColor:  Color(0xFFECF1FA),
       showUnselectedLabels: true,

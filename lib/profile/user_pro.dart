@@ -25,7 +25,7 @@ class UserPro extends StatelessWidget {
             children: [
               
               Container(
-                height: 650,
+                height: 660,
                 decoration: BoxDecoration(
                   color: Color(0xFFECF1FA),
                   borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
@@ -63,19 +63,19 @@ class UserPro extends StatelessWidget {
       ),
       SizedBox(height: 20),
       // Full Name
-              Text('Full Name', style: TextStyle(color: Color(0xFFA4BBE4))),
+              Text('Full Name', style: TextStyle(color: Color(0xFF2D4C82))),
               Text('Regawan sudarshan Rusiru',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400,color: Color(0xFF233A66))),
               SizedBox(height: 20),
 
               // Name with initials
-              Text('Name with initials', style: TextStyle(color: Color(0xFFA4BBE4))),
+              Text('Name with initials', style: TextStyle(color: Color(0xFF2D4C82))),
               Text('R.S Rusiru',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400,color: Color(0xFF233A66))),
               SizedBox(height: 20),
 
               // Email
-              Text('E-mail', style: TextStyle(color: Color(0xFFA4BBE4))),
+              Text('E-mail', style: TextStyle(color:Color(0xFF2D4C82))),
               Text(
                 'rusirusudarshan678@gmail.com',
                 style: TextStyle(
@@ -86,13 +86,13 @@ class UserPro extends StatelessWidget {
               SizedBox(height: 20),
 
               // Address
-              Text('Adress', style: TextStyle(color: Color(0xFFA4BBE4))),
+              Text('Adress', style: TextStyle(color: Color(0xFF2D4C82))),
               Text('No 12, Galle Road, Colombo',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400,color: Color(0xFF233A66))),
               SizedBox(height: 20),
 
               // Phone
-              Text('Phone number', style: TextStyle(color: Color(0xFFA4BBE4))),
+              Text('Phone number', style: TextStyle(color: Color(0xFF2D4C82))),
               Text('077 123 4567',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400,color: Color(0xFF233A66))),
 
@@ -119,7 +119,7 @@ Center(
               
             ],
           ),
-          backgroundColor: Color(0xFFECF1FA),
+          backgroundColor: Color(0xFF233A66),
            bottomNavigationBar: const Footer(),
     
         );
