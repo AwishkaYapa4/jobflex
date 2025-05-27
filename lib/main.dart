@@ -4,10 +4,9 @@ import 'package:jobflex/chat/chat_box.dart';
 import 'package:jobflex/chat/new_chat.dart';
 import 'package:jobflex/chat/chat_search.dart';
 import 'package:jobflex/footer_pages/more.dart';
-<<<<<<< HEAD
+
 import 'package:jobflex/payment/pay_succ.dart';
-=======
->>>>>>> ba38d39380e1c3ef57f9e02793646633d474eb56
+
 import 'package:jobflex/payment/payment.dart';
 import 'package:jobflex/profile/promo_admin.dart';
 import 'package:jobflex/profile/user_admin.dart';
@@ -20,7 +19,7 @@ import 'package:jobflex/supportive_pages/setting_page.dart';
 import 'package:jobflex/screan/home.dart';
 import 'package:jobflex/profile/promotor_profile.dart';
 import 'package:jobflex/supportive_pages/invite_friend.dart';
-<<<<<<< HEAD
+
 import 'package:jobflex/widget/constants.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/startpages/sign_up.dart';
@@ -29,13 +28,11 @@ import 'package:jobflex/models/setting.dart';
 import 'package:jobflex/widget/setting_tile.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/screan/Choice.dart';
-=======
 import 'package:jobflex/startpages/sign_up.dart';
 import 'package:jobflex/supportive_pages/help_center.dart';
 import 'package:jobflex/models/setting.dart';
 import 'package:jobflex/widget/footer.dart';
 
->>>>>>> ba38d39380e1c3ef57f9e02793646633d474eb56
 void main() {
   runApp(const MyApp());
 }
@@ -45,16 +42,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return MaterialApp(
       debugShowCheckedModeBanner: false,
      /* initialRoute: '/',
-=======
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       /* initialRoute: '/',
->>>>>>> ba38d39380e1c3ef57f9e02793646633d474eb56
       routes: {
         '/': (context) => const HomePage(), // Set HomePage as the initial page
         '/more': (context) => const More(),
@@ -66,7 +60,6 @@ class MyApp extends StatelessWidget {
         '/chatbox': (context) => const ChatBox(),
         '/newchat': (context) => const NewChat(),
         '/chatsearch': (context) => const ChatSearch(),
-<<<<<<< HEAD
 
         '/signup': (context) => const SignUpPage(),
 
@@ -74,7 +67,6 @@ class MyApp extends StatelessWidget {
         '/useradmin': (context) => const UserAdmin(),
       },*/
       home: const ChoiceScreen(), // Set ChoiceScreen as the initial page
-=======
         //  '/categories': (context) => const CategoriesPage(),
         //  '/login': (context) => const LoginPage(),
         '/signup': (context) => const SignUpPage(),
@@ -83,8 +75,8 @@ class MyApp extends StatelessWidget {
         '/useradmin': (context) => const UserAdmin(),
         //'/promoadmin': (context) => const PromoAdmin(),
       },*/
-      home:  JobsScreen(), // Set ChoiceScreen as the initial page
->>>>>>> ba38d39380e1c3ef57f9e02793646633d474eb56
+      home:  ChoiceScreen(), // Set ChoiceScreen as the initial page
+
     );
   }
 }

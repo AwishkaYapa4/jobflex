@@ -5,9 +5,8 @@ import 'package:jobflex/widget/footer.dart'; // Import the home screen
 
 class CategoriesScreen extends StatefulWidget {
   @override
-<<<<<<< HEAD
+
   Widget build(BuildContext context) {
-=======
   _CategoriesScreenState createState() => _CategoriesScreenState();
 }
 
@@ -105,7 +104,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         title = 'Recent Jobs';
     }
 
->>>>>>> ba38d39380e1c3ef57f9e02793646633d474eb56
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -119,7 +118,6 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         centerTitle: true,
       ),
       body: Container(
-<<<<<<< HEAD
         color: Color(0xFFE8EAF6), // Approximate background color
         child: ListView(
           children: [
@@ -153,10 +151,10 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             JobCard(),
           ],
         ),
-=======
+
         color: Color(0xFFE8EAF6),
         child: _buildJobList(currentJobs),
->>>>>>> ba38d39380e1c3ef57f9e02793646633d474eb56
+
       ),
       backgroundColor: const Color.fromRGBO(30, 50, 92, 1),
       bottomNavigationBar: BottomNavigationBar(
