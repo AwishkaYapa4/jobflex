@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
   }*/
       
       debugShowCheckedModeBanner: false,
-      home: ForgotPassword(), // Set ChoiceScreen as the initial page
+      home: JobsScreen(), // Set ChoiceScreen as the initial page
     );
   }
 }
