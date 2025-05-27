@@ -9,6 +9,7 @@ import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/supportive_pages/setting_page.dart';
 import 'package:jobflex/payment/pay_succ.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
