@@ -1,9 +1,12 @@
+import 'dart:isolate';
+
 import 'package:flutter/material.dart';
 import 'package:jobflex/chat/chat.dart';
 import 'package:jobflex/chat/chat_box.dart';
 import 'package:jobflex/chat/new_chat.dart';
 import 'package:jobflex/chat/chat_search.dart';
 import 'package:jobflex/footer_pages/more.dart';
+import 'package:jobflex/password/send_code_passwrd.dart';
 import 'package:jobflex/payment/pay_succ.dart';
 import 'package:jobflex/payment/payment.dart';
 import 'package:jobflex/profile/promo_admin.dart';
@@ -12,6 +15,7 @@ import 'package:jobflex/profile/user_pro.dart';
 import 'package:jobflex/screan/Choice.dart';
 import 'package:jobflex/screan/categories.dart';
 import 'package:jobflex/screan/jobs.dart';
+import 'package:jobflex/screan/promotor_home.dart';
 import 'package:jobflex/startpages/loging.dart';
 import 'package:jobflex/supportive_pages/setting_page.dart';
 import 'package:jobflex/screan/home.dart';
@@ -80,7 +84,7 @@ class MyApp extends StatelessWidget {
   }*/
       
       debugShowCheckedModeBanner: false,
-      home: PromotorProfile(), // Set ChoiceScreen as the initial page
+      home: PromotorHomePage(), // Set ChoiceScreen as the initial page
     );
   }
 }
