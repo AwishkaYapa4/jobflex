@@ -33,6 +33,8 @@ import 'package:jobflex/models/setting.dart';
 import 'package:jobflex/widget/footer.dart';
 import 'package:jobflex/password/forget_password.dart';
 import 'package:jobflex/profile/edit_profle.dart';
+import 'package:jobflex/profile/edit_profile_2.dart';
+import 'package:jobflex/profile/choose_photo.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -84,7 +86,7 @@ class MyApp extends StatelessWidget {
   }*/
       
       debugShowCheckedModeBanner: false,
-      home: PromotorHomePage(), // Set ChoiceScreen as the initial page
+      home:ChoosePhoto(), // Set ChoiceScreen as the initial page
     );
   }
 }
