@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:intl/intl.dart';
+import 'package:jobflex/screan/loading_page.dart';
 
 class NotificationModel {
   final IconData icon;
@@ -87,7 +87,7 @@ class _NotificationPageState extends State<NotificationPage>
     final difference = now.difference(time);
 
     if (difference.inDays > 7) {
-      return 'Now';
+      return "Now";
     } else if (difference.inDays > 0) {
       return '${difference.inDays}d ago';
     } else if (difference.inHours > 0) {
@@ -185,20 +185,21 @@ class _NotificationPageState extends State<NotificationPage>
                             // Handle menu selection
                             if (value == 'mark_all_read') {
                               setState(() {
-                                // Create a new list with all notifications marked as read
-                                _allNotifications.clear();
-                                _allNotifications.addAll(
-                                  _allNotifications.map(
-                                    (notification) => NotificationModel(
-                                      icon: notification.icon,
-                                      title: notification.title,
-                                      subtitle: notification.subtitle,
-                                      highlight: notification.highlight,
-                                      time: notification.time,
-                                      isRead: true,
-                                    ),
-                                  ),
-                                );
+                                for (
+                                  var i = 0;
+                                  i < _allNotifications.length;
+                                  i++
+                                ) {
+                                  final notification = _allNotifications[i];
+                                  _allNotifications[i] = NotificationModel(
+                                    icon: notification.icon,
+                                    title: notification.title,
+                                    subtitle: notification.subtitle,
+                                    highlight: notification.highlight,
+                                    time: notification.time,
+                                    isRead: true,
+                                  );
+                                }
                               });
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
@@ -373,12 +374,13 @@ class _NotificationPageState extends State<NotificationPage>
                     }
 
                     // Show notification details or navigate
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          'Opening: ${notification.title}${notification.highlight ?? ''}',
-                        ),
-                        duration: const Duration(seconds: 1),
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (context) => NotificationDetailsPage(
+                              notification: notification,
+                            ),
                       ),
                     );
                   },
@@ -481,6 +483,43 @@ class _NotificationPageState extends State<NotificationPage>
               );
             },
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class NotificationDetailsPage extends StatelessWidget {
+  final NotificationModel notification;
+
+  const NotificationDetailsPage({Key? key, required this.notification})
+    : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Notification Details'),
+        backgroundColor: const Color(0xFF233A66),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              notification.title,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            if (notification.subtitle != null)
+              Text(
+                notification.subtitle!,
+                style: const TextStyle(fontSize: 16),
+              ),
+            const SizedBox(height: 16),
+            // Add more details here as needed
+          ],
         ),
       ),
     );
