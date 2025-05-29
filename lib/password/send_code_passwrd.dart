@@ -15,13 +15,13 @@ class _SendCodePasswordScreenState extends State<SendCodePasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFECF1FA), // Light blue background
+      backgroundColor: const Color(0xFFECF1FA), 
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        centerTitle: true, // Center the title
+        centerTitle: true, 
         title: const Text(
-          "Please check your E-mail", // Title in AppBar
+          "Please check your E-mail", 
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -38,13 +38,13 @@ class _SendCodePasswordScreenState extends State<SendCodePasswordScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 10), // Reduced height
+            const SizedBox(height: 10), 
             const Text(
               "We're send a code to rusirusudarshan678@gmail.com",
               style: TextStyle(fontSize: 16, color: Color(0xFF233A66)),
             ),
             const SizedBox(height: 30),
-            // Code Input Boxes
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
@@ -52,7 +52,7 @@ class _SendCodePasswordScreenState extends State<SendCodePasswordScreen> {
                 (index) => Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 15,
-                  ), // Increased horizontal padding
+                  ), 
                   child: SizedBox(
                     width: 60,
                     height: 60,
@@ -82,7 +82,7 @@ class _SendCodePasswordScreenState extends State<SendCodePasswordScreen> {
             // Verify Button
             ElevatedButton(
               onPressed: () {
-                // Add your verification logic here
+                
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF233A66),
@@ -128,7 +128,7 @@ class _SendCodePasswordScreenState extends State<SendCodePasswordScreen> {
                         _buildNumberButton('3', 'GHI'),
                       ],
                     ),
-                    const SizedBox(height: 10), // Space between rows
+                    const SizedBox(height: 10), 
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -152,7 +152,7 @@ class _SendCodePasswordScreenState extends State<SendCodePasswordScreen> {
                       children: [
                         _buildNumberButton('*+#', ''),
                         _buildNumberButton('0', ''),
-                        _buildBackspaceButton(), // Backspace icon will be placed here
+                        _buildBackspaceButton(), 
                       ],
                     ),
                   ],
