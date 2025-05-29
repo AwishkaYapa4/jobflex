@@ -6,20 +6,25 @@ class Job {
   final String title;
   final String company;
   final String location;
-  final String workingDay;
-  final String time;
-  final String payment;
-  final String imageUrl;
 
+  final String imageUrl;
+  final String jobId;
+  final String status;
+  final String userEmail;
+  final DateTime appliedAt;
+  final String applicationId;
 
   Job({
     required this.title,
     required this.company,
     required this.location,
-    required this.workingDay,
-    required this.time,
-    required this.payment,
+
     required this.imageUrl,
+    required this.jobId,
+    required this.status,
+    required this.userEmail,
+    required this.appliedAt,
+    required this.applicationId,
   });
 }
 
