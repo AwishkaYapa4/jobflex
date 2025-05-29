@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jobflex/widget/footer.dart';
-import 'home.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Job {
   final String title;
