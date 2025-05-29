@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/auth/auth.dart';
+import 'package:jobflex/screan/home.dart';
+import 'package:jobflex/screan/promotor_home.dart';
 import 'package:jobflex/widget/constants.dart';
 
-class LogingScreen extends StatelessWidget {
+class LogingScreen extends StatefulWidget {
   const LogingScreen({super.key});
 
+  @override
+  State<LogingScreen> createState() => _LogingScreenState();
+}
+
+class _LogingScreenState extends State<LogingScreen> {
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +57,8 @@ class LogingScreen extends StatelessWidget {
                         style: TextStyle(fontSize: 12, color: Colors.black87),
                       ),
                       const SizedBox(height: 10),
-                      const TextField(
+                      TextField(
+                        controller: usernameController,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Color(0xFFDCE4F9),
@@ -68,7 +79,9 @@ class LogingScreen extends StatelessWidget {
                         style: TextStyle(fontSize: 12, color: Colors.black87),
                       ),
                       const SizedBox(height: 10),
-                      const TextField(
+                      TextField(
+                        controller: passwordController,
+                        obscureText: true,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Color(0xFFDCE4F9),
@@ -113,7 +126,9 @@ class LogingScreen extends StatelessWidget {
                         width: double.infinity,
                         height: 45,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            _login();
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: JPrimaryColor,
                             shape: RoundedRectangleBorder(
@@ -150,21 +165,29 @@ class LogingScreen extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 10),
-                      Center(
-                        child: RichText(
-                          text: const TextSpan(
-                            text: "Don't have an account?",
-                            style: TextStyle(color: Colors.black, fontSize: 12),
-                            children: [
-                              TextSpan(
-                                text: ' Sign Up',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 214, 126, 10),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/signup');
+                        },
+                        child: Center(
+                          child: RichText(
+                            text: const TextSpan(
+                              text: "Don't have an account?",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 12,
                               ),
-                            ],
+                              children: [
+                                TextSpan(
+                                  text: ' Sign Up',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 214, 126, 10),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -177,5 +200,62 @@ class LogingScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _login() async {
+    final result = await AuthService().logWithEmailAndPassword(
+      usernameController.text,
+      passwordController.text,
+    );
+
+    if (result != null) {
+      showDialog(
+        context: context,
+        builder:
+            (context) => AlertDialog(
+              backgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              title: Text(
+                "ACCOUNT STATUS",
+                style: TextStyle(color: Colors.black, fontSize: 22),
+              ),
+              content: Text(
+                "LOGGING SUCCESSFUL",
+                style: TextStyle(color: Colors.black, fontSize: 18),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(); // Dismiss the alert
+
+                    // Navigate based on user role
+                    if (result['role'] == 'promoter') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) => PromotorHomePage(),
+                        ),
+                      );
+                    }
+                    if (result['role'] == 'user') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) => HomePage(),
+                        ),
+                      );
+                    }
+                  },
+                  child: Text(
+                    "OK",
+                    style: TextStyle(color: Colors.grey[800], fontSize: 16),
+                  ),
+                ),
+              ],
+            ),
+      );
+    }
   }
 }
