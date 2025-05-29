@@ -7,7 +7,7 @@ class PassSucc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: JPrimaryColor, // Dark blue background
+      backgroundColor: JPrimaryColor, 
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
