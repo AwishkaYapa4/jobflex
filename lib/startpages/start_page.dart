@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/screan/Choice.dart';
+import 'package:jobflex/startpages/loging.dart';
+import 'package:jobflex/startpages/sign_up.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -45,9 +48,7 @@ class StartPage extends StatelessWidget {
                         width: 280,
                         height: 280,
                         color: Colors.grey.shade200,
-                        child: const Center(
-                          child: Text("Rocket Illustration"),
-                        ),
+                        child: const Center(child: Text("Rocket Illustration")),
                       );
                     },
                   ),
@@ -102,6 +103,13 @@ class StartPage extends StatelessWidget {
                     ),
                   );
 
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => ChoiceScreen(),
+                    ),
+                  );
+
                   // Navigate to sign up page
                   // Navigator.push(
                   //   context,
@@ -118,10 +126,7 @@ class StartPage extends StatelessWidget {
                 ),
                 child: const Text(
                   "Sign up",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
             ),
@@ -135,10 +140,7 @@ class StartPage extends StatelessWidget {
               children: [
                 const Text(
                   "Already have an account?",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
+                  style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
                 TextButton(
                   onPressed: () {

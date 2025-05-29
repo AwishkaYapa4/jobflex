@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/auth/auth.dart';
 import 'package:jobflex/models/setting.dart';
 import 'package:jobflex/widget/footer.dart';
+import 'package:jobflex/widget/promoter_footer.dart';
 import 'package:jobflex/widget/setting_tile.dart';
 import 'package:jobflex/profile/promotor_profile.dart'; // Import the PromotorProfile page
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class More extends StatelessWidget {
-  const More({super.key});
+class AdminMore extends StatefulWidget {
+  const AdminMore({super.key});
 
+  @override
+  State<AdminMore> createState() => _AdminMoreState();
+}
+
+class _AdminMoreState extends State<AdminMore> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +67,8 @@ class More extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Handle sign out logic here
+                    AuthService().signOut();
+                    Navigator.pushReplacementNamed(context, '/login');
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: const Color(0xFF233A66),
@@ -70,13 +80,44 @@ class More extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const Footer(),
+      bottomNavigationBar: const PromoterFooter(),
     );
   }
 }
 
-class AvatarCard extends StatelessWidget {
+class AvatarCard extends StatefulWidget {
   const AvatarCard({super.key});
+
+  @override
+  State<AvatarCard> createState() => _AvatarCardState();
+}
+
+class _AvatarCardState extends State<AvatarCard> {
+  String userName = '';
+  String userRole = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _getUserInfo();
+  }
+
+  Future<void> _getUserInfo() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      final userDoc =
+          await FirebaseFirestore.instance
+              .collection('users')
+              .doc(user.uid)
+              .get();
+      if (userDoc.exists) {
+        setState(() {
+          userName = userDoc.data()?['fullname'] ?? '';
+          userRole = userDoc.data()?['role'] ?? '';
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,16 +129,16 @@ class AvatarCard extends StatelessWidget {
           child: Image.asset('img/supermarket.png', scale: 5),
         ),
         const SizedBox(width: 23),
-        const Column(
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Mr.Nadeemal",
-              style: TextStyle(fontSize: 25, color: Color(0xFF233A66)),
+              userName.isEmpty ? "Loading..." : userName,
+              style: const TextStyle(fontSize: 25, color: Color(0xFF233A66)),
             ),
             Text(
-              'I am superman',
-              style: TextStyle(fontSize: 12, color: Color(0xFF233A66)),
+              userRole.isEmpty ? "Loading..." : "I am a $userRole",
+              style: const TextStyle(fontSize: 12, color: Color(0xFF233A66)),
             ),
           ],
         ),

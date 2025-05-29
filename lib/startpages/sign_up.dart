@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/auth/auth.dart';
+import 'package:jobflex/startpages/loging.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class SignUpPage extends StatefulWidget {
+  final String role;
+  SignUpPage({super.key, required this.role});
 
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  final TextEditingController fullnameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController cpasswordController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -54,23 +67,35 @@ class SignUpPage extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 24),
-                        _buildLabeledField("Full Name"),
+                        _buildLabeledField("Full Name", fullnameController),
                         _buildLabeledField(
                           "E-mail",
+                          emailController,
                           keyboardType: TextInputType.emailAddress,
                         ),
                         _buildLabeledField(
                           "Phone number",
+                          phoneController,
                           keyboardType: TextInputType.phone,
                         ),
-                        _buildLabeledField("Password", isObscure: true),
-                        _buildLabeledField("Confirm password", isObscure: true),
+                        _buildLabeledField(
+                          "Password",
+                          passwordController,
+                          isObscure: true,
+                        ),
+                        _buildLabeledField(
+                          "Confirm password",
+                          cpasswordController,
+                          isObscure: true,
+                        ),
                         const SizedBox(height: 24),
                         SizedBox(
                           width: double.infinity,
                           height: 52,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              _signup();
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF0B2B56),
                               shape: RoundedRectangleBorder(
@@ -112,12 +137,20 @@ class SignUpPage extends StatelessWidget {
                         const SizedBox(height: 24),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Already have an account? ",
-                              style: TextStyle(
-                                color: Colors.black54,
-                                fontSize: 14,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushReplacementNamed(
+                                  context,
+                                  '/login',
+                                );
+                              },
+                              child: Text(
+                                "Already have an account? ",
+                                style: TextStyle(
+                                  color: Colors.black54,
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
                             Text(
@@ -142,8 +175,68 @@ class SignUpPage extends StatelessWidget {
     );
   }
 
+  Future<void> _signup() async {
+    // Validate passwords match
+    if (passwordController.text != cpasswordController.text) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Passwords do not match')));
+      return;
+    } else {
+      // Validate passwords match
+
+      final user = await AuthService().createUserWithEmaiAndPassword(
+        fullnameController.text,
+        emailController.text,
+        phoneController.text,
+        passwordController.text,
+        widget.role, // Add the missing fifth argument (role)
+      );
+
+      if (user != null) {
+        showDialog(
+          context: context,
+          builder:
+              (context) => AlertDialog(
+                backgroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                title: Text(
+                  "ACCOUNT STATUS",
+                  style: TextStyle(color: Colors.black, fontSize: 22),
+                ),
+                content: Text(
+                  "ACCOUNT SUCCESSFULLY CREATED",
+                  style: TextStyle(color: Colors.black, fontSize: 18),
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(); // Dismiss the alert
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) => LogingScreen(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "OK",
+                      style: TextStyle(color: Colors.grey[800], fontSize: 16),
+                    ),
+                  ),
+                ],
+              ),
+        );
+      }
+    }
+  }
+
   Widget _buildLabeledField(
-    String label, {
+    String label,
+    TextEditingController texteditingcontroller, {
     bool isObscure = false,
     TextInputType keyboardType = TextInputType.text,
   }) {
@@ -160,6 +253,7 @@ class SignUpPage extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         TextField(
+          controller: texteditingcontroller,
           obscureText: isObscure,
           keyboardType: keyboardType,
           decoration: InputDecoration(
