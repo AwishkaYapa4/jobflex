@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/startpages/sign_up.dart';
 
 class ChoiceScreen extends StatelessWidget {
   const ChoiceScreen({super.key});
@@ -21,28 +22,33 @@ class ChoiceScreen extends StatelessWidget {
               ),
             ),
             Row(
-              
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                 
                 _buildRoleOption(
                   icon: Icons.person,
                   label: 'User',
                   onTap: () {
-                    Navigator.pushNamed(
+                    Navigator.push(
                       context,
-                      '/user',
-                    ); // Set route accordingly
+                      MaterialPageRoute<void>(
+                        builder:
+                            (BuildContext context) => SignUpPage(role: "user"),
+                      ),
+                    );
                   },
                 ),
                 _buildRoleOption(
-                   icon: Icons.person,
+                  icon: Icons.person,
                   label: 'Promoter',
                   onTap: () {
-                    Navigator.pushNamed(
+                    Navigator.push(
                       context,
-                      '/promoter',
-                    ); // Set route accordingly
+                      MaterialPageRoute<void>(
+                        builder:
+                            (BuildContext context) =>
+                                SignUpPage(role: "promoter"),
+                      ),
+                    );
                   },
                 ),
               ],

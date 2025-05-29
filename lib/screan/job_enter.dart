@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jobflex/widget/footer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:jobflex/widget/promoter_footer.dart';
 
 class JobEnter extends StatefulWidget {
   const JobEnter({Key? key}) : super(key: key);
@@ -10,6 +12,9 @@ class JobEnter extends StatefulWidget {
 
 class _JobEnterState extends State<JobEnter> {
   final _formKey = GlobalKey<FormState>();
+  final _firestore = FirebaseFirestore.instance;
+  final _auth = FirebaseAuth.instance;
+  bool _isLoading = false;
 
   final TextEditingController jobTitleController = TextEditingController();
   final TextEditingController categoryController = TextEditingController();
@@ -18,6 +23,64 @@ class _JobEnterState extends State<JobEnter> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController contactController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
+
+  Future<void> _submitJob() async {
+    if (_formKey.currentState!.validate()) {
+      setState(() {
+        _isLoading = true;
+      });
+
+      try {
+        final user = _auth.currentUser;
+        if (user == null) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Please login to post a job')),
+          );
+          return;
+        }
+
+        // Create job data
+        final jobData = {
+          'jobTitle': jobTitleController.text,
+          'category': categoryController.text,
+          'skills': skillsController.text,
+          'location': locationController.text,
+          'email': emailController.text,
+          'contact': contactController.text,
+          'description': descriptionController.text,
+          'postedBy': user.uid,
+          'postedAt': FieldValue.serverTimestamp(),
+          'status': 'active',
+        };
+
+        // Save to Firestore
+        await _firestore.collection('jobs').add(jobData);
+
+        // Clear form
+        jobTitleController.clear();
+        categoryController.clear();
+        skillsController.clear();
+        locationController.clear();
+        emailController.clear();
+        contactController.clear();
+        descriptionController.clear();
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Job posted successfully!')),
+        );
+
+        Navigator.pop(context);
+      } catch (e) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Error posting job: $e')));
+      } finally {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +113,7 @@ class _JobEnterState extends State<JobEnter> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Form
             Expanded(
               child: SingleChildScrollView(
@@ -76,11 +139,10 @@ class _JobEnterState extends State<JobEnter> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          _buildButton('Submit', () {
-                            if (_formKey.currentState!.validate()) {
-                              // You can handle form submission here
-                            }
-                          }),
+                          _buildButton(
+                            'Submit',
+                            _isLoading ? null : _submitJob,
+                          ),
                           _buildButton('Cancel', () {
                             Navigator.pop(context);
                           }),
@@ -95,8 +157,7 @@ class _JobEnterState extends State<JobEnter> {
           ],
         ),
       ),
-
-      bottomNavigationBar: const Footer(),
+      bottomNavigationBar: PromoterFooter(),
     );
   }
 
@@ -119,7 +180,7 @@ class _JobEnterState extends State<JobEnter> {
         },
         decoration: InputDecoration(
           labelText: label,
-          fillColor: Color(0xFFDDE6FF),
+          fillColor: const Color(0xFFDDE6FF),
           filled: true,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
@@ -131,7 +192,7 @@ class _JobEnterState extends State<JobEnter> {
   }
 
   // Widget for submit and cancel buttons
-  Widget _buildButton(String label, VoidCallback onPressed) {
+  Widget _buildButton(String label, VoidCallback? onPressed) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
