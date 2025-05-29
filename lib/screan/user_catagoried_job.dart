@@ -5,14 +5,16 @@ import 'package:jobflex/widget/footer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class JobsScreen extends StatefulWidget {
-  const JobsScreen({Key? key}) : super(key: key);
+class UserCatagoriedJob extends StatefulWidget {
+  final String jobcatagory;
+  const UserCatagoriedJob({Key? key, required this.jobcatagory})
+    : super(key: key);
 
   @override
-  State<JobsScreen> createState() => _JobsScreenState();
+  State<UserCatagoriedJob> createState() => _UserCatagoriedJobState();
 }
 
-class _JobsScreenState extends State<JobsScreen> {
+class _UserCatagoriedJobState extends State<UserCatagoriedJob> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   @override
@@ -45,6 +47,7 @@ class _JobsScreenState extends State<JobsScreen> {
             _firestore
                 .collection('jobs')
                 .where('status', isEqualTo: 'active')
+                .where('category', isEqualTo: widget.jobcatagory)
                 .snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
