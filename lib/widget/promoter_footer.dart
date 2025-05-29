@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:jobflex/chat/chat.dart'; // Import the Chat page
-import 'package:jobflex/footer_pages/notification_page.dart';
+import 'package:jobflex/footer_pages/admin_more.dart';
 import 'package:jobflex/screan/home.dart'; // Import the Home page
+import 'package:jobflex/screan/job_view_promoter.dart';
 import 'package:jobflex/screan/loading_page.dart';
+import 'package:jobflex/screan/promotor_home.dart';
 import 'package:jobflex/supportive_pages/help_center.dart'; // Import the Help Center page
 import 'package:jobflex/footer_pages/user_more.dart';
-import 'package:jobflex/screan/jobs.dart';
 
-class Footer extends StatefulWidget {
-  const Footer({Key? key}) : super(key: key);
+class PromoterFooter extends StatefulWidget {
+  const PromoterFooter({Key? key}) : super(key: key);
 
   @override
-  State<Footer> createState() => _FooterState();
+  State<PromoterFooter> createState() => _PromoterFooterState();
 }
 
-class _FooterState extends State<Footer> {
+class _PromoterFooterState extends State<PromoterFooter> {
   int _currentIndex = 0;
   DateTime? _lastTapTime;
 
@@ -41,27 +42,23 @@ class _FooterState extends State<Footer> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => LoadingPage(nextPage: JobsScreen()),
+          builder: (context) => LoadingPage(nextPage: JobViewPromoter()),
         ),
       );
     } else if (index == 2) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => LoadingPage(nextPage: HomePage()),
+          builder: (context) => LoadingPage(nextPage: PromotorHomePage()),
         ),
       );
     } else if (index == 3) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => LoadingPage(nextPage: NotificationPage()),
-        ),
-      );
     } else if (index == 4) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => LoadingPage(nextPage: More())),
+        MaterialPageRoute(
+          builder: (context) => LoadingPage(nextPage: AdminMore()),
+        ),
       );
     }
   }
