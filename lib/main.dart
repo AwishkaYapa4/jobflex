@@ -60,9 +60,7 @@ class MyApp extends StatelessWidget {
         //'/promoadmin': (context) => const PromoAdmin(),
   }*/
       debugShowCheckedModeBanner: false,
-      home: LoadingPage(
-        nextPage: WelcomePage(),
-      ), // Set ChoiceScreen as the initial page
+      home: LogingScreen(), // Set ChoiceScreen as the initial page
       routes: {
         '/login': (context) => LogingScreen(),
         '/signup': (context) => ChoiceScreen(),
