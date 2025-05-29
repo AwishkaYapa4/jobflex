@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'job-flex-8bd98.firebasestorage.app',
     iosBundleId: 'com.example.jobflex',
   );
+
 }
