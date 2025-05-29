@@ -33,7 +33,10 @@ class _JobEnterState extends State<JobEnter> {
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: const Icon(Icons.arrow_back, color: Color(0xFF233A66)),
+                    child: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF233A66),
+                    ),
                   ),
                   const SizedBox(width: 8),
                   const Text(
@@ -47,7 +50,7 @@ class _JobEnterState extends State<JobEnter> {
                 ],
               ),
             ),
-              SizedBox(height: 20),
+            SizedBox(height: 20),
             // Form
             Expanded(
               child: SingleChildScrollView(
@@ -62,7 +65,11 @@ class _JobEnterState extends State<JobEnter> {
                       _buildField('Location', locationController),
                       _buildField('E-mail', emailController),
                       _buildField('Contact', contactController),
-                      _buildField('Description', descriptionController, maxLines: 4),
+                      _buildField(
+                        'Description',
+                        descriptionController,
+                        maxLines: 4,
+                      ),
 
                       const SizedBox(height: 10),
 
@@ -89,13 +96,16 @@ class _JobEnterState extends State<JobEnter> {
         ),
       ),
 
-     bottomNavigationBar: const Footer(),
-    
+      bottomNavigationBar: const Footer(),
     );
   }
 
   // Widget for text fields
-  Widget _buildField(String label, TextEditingController controller, {int maxLines = 1}) {
+  Widget _buildField(
+    String label,
+    TextEditingController controller, {
+    int maxLines = 1,
+  }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: TextFormField(
@@ -126,16 +136,10 @@ class _JobEnterState extends State<JobEnter> {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color(0xFF233A66),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       ),
-      child: Text(
-        label,
-        style: const TextStyle(color: Color(0xFFEAF2FB)),
-      ),
+      child: Text(label, style: const TextStyle(color: Color(0xFFEAF2FB))),
     );
   }
 }
-

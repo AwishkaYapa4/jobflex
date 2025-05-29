@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDP7t8sGKUc_o0ruJJgo7TnQ_HwzH4chqc',
-    appId: '1:648385565027:android:48b6df24ed4940cfec4356',
-    messagingSenderId: '648385565027',
-    projectId: 'jobflex-cf827',
-    storageBucket: 'jobflex-cf827.firebasestorage.app',
+    apiKey: 'AIzaSyBaLYdctH5Lr-vxN6YG_nfK94xssnOCBtI',
+    appId: '1:11696162749:android:081d7b29a89238544a34d4',
+    messagingSenderId: '11696162749',
+    projectId: 'job-flex-8bd98',
+    storageBucket: 'job-flex-8bd98.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDL1HCN00YXM1SKSsaP03y8wqyVYlZ_VY8',
-    appId: '1:648385565027:ios:d822f0623d10d1ceec4356',
-    messagingSenderId: '648385565027',
-    projectId: 'jobflex-cf827',
-    storageBucket: 'jobflex-cf827.firebasestorage.app',
+    apiKey: 'AIzaSyCj0FUUI3Bkz0DVojgU2pe6Zp7s3pLOJ34',
+    appId: '1:11696162749:ios:7f9f3619812609874a34d4',
+    messagingSenderId: '11696162749',
+    projectId: 'job-flex-8bd98',
+    storageBucket: 'job-flex-8bd98.firebasestorage.app',
     iosBundleId: 'com.example.jobflex',
   );
 }
