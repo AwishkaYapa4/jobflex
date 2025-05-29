@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jobflex/startpages/sign_up.dart';
+
 
 class ChoiceScreen extends StatelessWidget {
   const ChoiceScreen({super.key});
