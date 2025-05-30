@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jobflex/footer_pages/admin_more.dart';
-import 'package:jobflex/widget/footer.dart';
+import 'package:jobflex/screan/job_enter.dart';
+import 'package:jobflex/screan/job_event_crew.dart';
+import 'package:jobflex/widget/promoter_footer.dart';
 
 class PromotorHomePage extends StatelessWidget {
   const PromotorHomePage({super.key});
@@ -83,7 +84,12 @@ class PromotorHomePage extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: 10.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        // Handle enter service/job action
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute<void>(
+                            builder: (BuildContext context) => JobEnter(),
+                          ),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFFD6E4FF),
@@ -106,7 +112,7 @@ class PromotorHomePage extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const Footer(),
+      bottomNavigationBar: const PromoterFooter(),
     );
   }
 }
@@ -119,21 +125,31 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(image, height: 80),
-          const SizedBox(height: 5),
-          Text(
-            title,
-            style: const TextStyle(fontSize: 16, color: Color(0xFF233A66)),
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute<void>(
+            builder: (BuildContext context) => JobEventCrew(jobcatagory: title),
           ),
-        ],
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(image, height: 80),
+            const SizedBox(height: 5),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 16, color: Color(0xFF233A66)),
+            ),
+          ],
+        ),
       ),
     );
   }

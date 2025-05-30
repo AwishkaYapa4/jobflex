@@ -20,7 +20,7 @@ class AppliedScreen extends StatelessWidget {
             const Icon(
               Icons.check_circle_outline,
               size: 250,
-              color: Color.fromARGB(255, 218, 144, 144),
+              color: Colors.white,
             ),
           ],
         ),
