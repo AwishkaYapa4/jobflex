@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:jobflex/main.dart';
+import 'package:jobflex/supportive_pages/help_center.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
